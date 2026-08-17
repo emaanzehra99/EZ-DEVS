@@ -1,0 +1,1641 @@
+
+/* =========================================
+   ABOUT PAGE
+========================================= */
+
+.about-page {
+  width: 100%;
+  overflow: hidden;
+  background: #080809;
+  color: #eee9ec;
+}
+
+.about-container {
+  width: min(1180px, calc(100% - 3rem));
+  margin: 0 auto;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.about-hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 10rem 0 7rem;
+}
+
+.about-topline {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6rem;
+
+  color: #55575c;
+  font-size: 0.55rem;
+  font-weight: 600;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+}
+
+.about-topline span:first-child {
+  color: #a45e79;
+}
+
+.about-hero-grid {
+  display: grid;
+  grid-template-columns: 1.35fr 0.65fr;
+  align-items: end;
+  gap: 5rem;
+}
+
+.about-hero-title {
+  margin: 0;
+
+  font-size: clamp(4.5rem, 9vw, 9rem);
+  font-weight: 500;
+  line-height: 0.84;
+  letter-spacing: -0.075em;
+}
+
+.about-hero-title span {
+  display: block;
+  overflow: hidden;
+}
+
+.about-hero-title em {
+  color: #a45e79;
+  font-style: normal;
+}
+
+.hero-muted {
+  color: #707177;
+}
+
+.about-hero-copy {
+  padding-bottom: 0.7rem;
+}
+
+.about-hero-copy p {
+  max-width: 340px;
+  margin: 0 0 3rem;
+
+  color: #85878d;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.about-scroll {
+  color: #55575c;
+  font-size: 0.52rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+}
+
+
+/* =========================================
+   PEOPLE
+========================================= */
+
+.about-person {
+  position: relative;
+  padding: 10rem 0;
+}
+
+.about-person-burgundy {
+  background:
+    radial-gradient(
+      circle at 5% 45%,
+      rgba(126, 42, 68, 0.14),
+      transparent 30%
+    );
+}
+
+.about-person-blue {
+  background:
+    radial-gradient(
+      circle at 95% 45%,
+      rgba(48, 79, 103, 0.15),
+      transparent 30%
+    );
+}
+
+.person-label {
+  display: flex;
+  justify-content: space-between;
+
+  padding-bottom: 1.5rem;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+  color: #55575c;
+  font-size: 0.52rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+}
+
+.person-label span:first-child {
+  color: #a45e79;
+}
+
+.about-person-blue .person-label span:first-child {
+  color: #5b7d95;
+}
+
+.person-grid {
+  display: grid;
+  grid-template-columns: 0.82fr 1.18fr;
+  align-items: center;
+  gap: 7rem;
+
+  padding-top: 5rem;
+}
+
+.person-grid-reverse {
+  grid-template-columns: 1.18fr 0.82fr;
+}
+
+.person-grid-reverse .about-photo {
+  order: 2;
+}
+
+.about-photo {
+  position: relative;
+  overflow: hidden;
+
+  aspect-ratio: 0.82;
+
+  border-radius: 14px;
+  background: #111113;
+}
+
+.about-photo img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transform: scale(1.08);
+}
+
+.photo-tag {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+
+  padding: 0.55rem 0.75rem;
+
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+
+  color: #eee9ec;
+  background: rgba(8, 8, 9, 0.55);
+
+  backdrop-filter: blur(12px);
+
+  font-size: 0.48rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+}
+
+.person-content {
+  max-width: 600px;
+}
+
+.person-kicker {
+  margin: 0 0 1.5rem;
+
+  color: #a45e79 !important;
+
+  font-size: 0.52rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.about-person-blue .person-kicker {
+  color: #5b7d95 !important;
+}
+
+.person-content h2 {
+  margin: 0;
+
+  font-size: clamp(3.7rem, 6vw, 6.5rem);
+  font-weight: 500;
+  line-height: 0.87;
+  letter-spacing: -0.07em;
+}
+
+.person-content h2 span {
+  color: #777980;
+}
+
+.about-person-blue .person-content h2 span {
+  color: #69727a;
+}
+
+.person-lead {
+  max-width: 520px;
+
+  margin: 3rem 0 0 !important;
+
+  color: #c6c2c5 !important;
+
+  font-size: 1.12rem !important;
+  line-height: 1.6 !important;
+}
+
+.person-content > p:not(.person-kicker):not(.person-lead) {
+  max-width: 500px;
+
+  margin: 1.3rem 0 0;
+
+  color: #777980;
+
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+
+.person-mark {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+
+  margin-top: 3rem;
+
+  color: #55575c;
+
+  font-size: 0.48rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+}
+
+.person-mark i {
+  display: block;
+
+  width: 35px;
+  height: 1px;
+
+  background: #a45e79;
+}
+
+.blue-mark i {
+  background: #5b7d95;
+}
+
+
+/* =========================================
+   CONNECTION
+========================================= */
+
+.about-connection {
+  padding: 12rem 0;
+  background: #0b0b0d;
+}
+
+.connection-top {
+  display: flex;
+  justify-content: space-between;
+
+  margin-bottom: 7rem;
+
+  color: #55575c;
+  font-size: 0.52rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+}
+
+.connection-content {
+  display: grid;
+  grid-template-columns: 1fr 500px 1fr;
+  align-items: center;
+  gap: 3rem;
+}
+
+.connection-content h2 {
+  margin: 0;
+
+  font-size: clamp(2.8rem, 5vw, 5.5rem);
+  font-weight: 500;
+  line-height: 0.88;
+  letter-spacing: -0.07em;
+}
+
+.connection-content h2:last-child {
+  text-align: right;
+}
+
+.connection-content em {
+  color: #a45e79;
+  font-style: normal;
+}
+
+.connection-content h2:last-child em {
+  color: #5b7d95;
+}
+
+.connection-visual {
+  width: 100%;
+}
+
+.connection-visual svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.connection-line {
+  fill: none;
+
+  stroke-width: 2.5;
+  stroke-linecap: round;
+
+  stroke-dasharray: 500;
+}
+
+.connection-burgundy {
+  stroke: #a45e79;
+}
+
+.connection-blue {
+  stroke: #5b7d95;
+}
+
+.connection-dot {
+  fill: #eee9ec;
+}
+
+.connection-copy {
+  max-width: 560px;
+  margin: 5rem 0 0 auto;
+}
+
+.connection-copy p {
+  margin: 0;
+
+  color: #85878d;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+
+/* =========================================
+   PROCESS
+========================================= */
+
+.about-process {
+  padding: 12rem 0;
+}
+
+.process-heading {
+  display: grid;
+  grid-template-columns: 0.45fr 1fr;
+  gap: 4rem;
+
+  margin-bottom: 7rem;
+}
+
+.process-heading > span {
+  color: #55575c;
+  font-size: 0.52rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+}
+
+.process-heading h2 {
+  margin: 0;
+
+  font-size: clamp(4rem, 7vw, 7rem);
+  font-weight: 500;
+  line-height: 0.86;
+  letter-spacing: -0.07em;
+}
+
+.process-heading em {
+  color: #a45e79;
+  font-style: normal;
+}
+
+.process-list {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.process-item {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  gap: 2rem;
+
+  padding: 2.5rem 0;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.process-item > span {
+  color: #5b7d95;
+  font-size: 0.58rem;
+  font-weight: 600;
+}
+
+.process-item h3 {
+  margin: 0;
+
+  color: #ded9dc;
+  font-size: 1.4rem;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+}
+
+.process-item p {
+  max-width: 500px;
+
+  margin: 0.7rem 0 0;
+
+  color: #777980;
+  font-size: 0.88rem;
+  line-height: 1.65;
+}
+
+
+/* =========================================
+   FINAL
+========================================= */
+
+.about-final {
+  padding: 12rem 0 9rem;
+
+  background:
+    radial-gradient(
+      circle at 80% 40%,
+      rgba(48, 79, 103, 0.14),
+      transparent 35%
+    );
+}
+
+.final-label {
+  color: #a45e79;
+
+  font-size: 0.55rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+}
+
+.about-final h2 {
+  max-width: 900px;
+
+  margin: 3rem 0 4rem;
+
+  font-size: clamp(4.5rem, 9vw, 9rem);
+  font-weight: 500;
+  line-height: 0.84;
+  letter-spacing: -0.075em;
+}
+
+.about-final h2 em {
+  color: #5b7d95;
+  font-style: normal;
+}
+
+.about-final-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 2rem;
+
+  padding-bottom: 0.8rem;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+  color: #eee9ec;
+  text-decoration: none;
+
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+
+  transition:
+    gap 0.4s ease,
+    border-color 0.4s ease;
+}
+
+.about-final-link strong {
+  color: #a45e79;
+  font-size: 1rem;
+}
+
+.about-final-link:hover {
+  gap: 3rem;
+  border-color: #a45e79;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+  .about-hero-grid {
+    grid-template-columns: 1fr 0.55fr;
+    gap: 3rem;
+  }
+
+  .person-grid,
+  .person-grid-reverse {
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 4rem;
+  }
+
+  .connection-content {
+    grid-template-columns: 1fr 280px 1fr;
+    gap: 1.5rem;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+  .about-container {
+    width: calc(100% - 2rem);
+  }
+
+  .about-hero {
+    min-height: auto;
+    padding: 8rem 0 6rem;
+  }
+
+  .about-topline {
+    margin-bottom: 4rem;
+  }
+
+  .about-topline span:last-child {
+    display: none;
+  }
+
+  .about-hero-grid {
+    display: block;
+  }
+
+  .about-hero-title {
+    font-size: clamp(3.4rem, 15vw, 5rem);
+  }
+
+  .about-hero-copy {
+    margin-top: 3rem;
+  }
+
+  .about-hero-copy p {
+    max-width: 320px;
+    font-size: 0.9rem;
+  }
+
+
+  /* PEOPLE */
+
+  .about-person {
+    padding: 7rem 0;
+  }
+
+  .person-label {
+    gap: 1rem;
+  }
+
+  .person-label span:last-child {
+    max-width: 180px;
+    text-align: right;
+    line-height: 1.5;
+  }
+
+  .person-grid,
+  .person-grid-reverse {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    padding-top: 3rem;
+  }
+
+  .person-grid-reverse .about-photo {
+    order: 0;
+  }
+
+  .about-photo {
+    width: 100%;
+    aspect-ratio: 0.9;
+  }
+
+  .person-content h2 {
+    font-size: clamp(3rem, 13vw, 4.5rem);
+  }
+
+  .person-lead {
+    margin-top: 2rem !important;
+    font-size: 1rem !important;
+  }
+
+  .person-content > p:not(.person-kicker):not(.person-lead) {
+    font-size: 0.86rem;
+  }
+
+
+  /* CONNECTION */
+
+  .about-connection {
+    padding: 7rem 0;
+  }
+
+  .connection-top {
+    margin-bottom: 4rem;
+  }
+
+  .connection-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2.5rem;
+  }
+
+  .connection-content h2,
+  .connection-content h2:last-child {
+    text-align: left;
+    font-size: clamp(2.8rem, 12vw, 4rem);
+  }
+
+  .connection-visual {
+    width: 100%;
+  }
+
+  .connection-copy {
+    margin-top: 3rem;
+  }
+
+  .connection-copy p {
+    font-size: 0.9rem;
+  }
+
+
+  /* PROCESS */
+
+  .about-process {
+    padding: 7rem 0;
+  }
+
+  .process-heading {
+    display: block;
+    margin-bottom: 4rem;
+  }
+
+  .process-heading h2 {
+    margin-top: 2rem;
+    font-size: clamp(3.3rem, 14vw, 5rem);
+  }
+
+  .process-item {
+    grid-template-columns: 35px 1fr;
+    gap: 1rem;
+    padding: 2rem 0;
+  }
+
+  .process-item h3 {
+    font-size: 1.2rem;
+  }
+
+  .process-item p {
+    font-size: 0.82rem;
+  }
+
+
+  /* FINAL */
+
+  .about-final {
+    padding: 7rem 0 6rem;
+  }
+
+  .about-final h2 {
+    margin: 2rem 0 3rem;
+    font-size: clamp(3.5rem, 15vw, 5.5rem);
+  }
+
+  .about-final-link {
+    gap: 1.3rem;
+  }
+
+}
+
+
+/* =========================================
+   SMALL PHONES
+========================================= */
+
+@media (max-width: 380px) {
+
+  .about-hero-title {
+    font-size: 3.1rem;
+  }
+
+  .person-content h2 {
+    font-size: 2.8rem;
+  }
+
+  .process-heading h2 {
+    font-size: 3rem;
+  }
+
+  .about-final h2 {
+    font-size: 3.2rem;
+  }
+
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .about-reveal,
+  .about-photo,
+  .connection-line {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* =========================================
+   WHAT WE BELIEVE
+========================================= */
+
+.about-beliefs {
+  position: relative;
+
+  padding: 12rem 0 14rem;
+
+  background:
+    radial-gradient(
+      circle at 15% 35%,
+      rgba(126, 42, 68, 0.09),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 85% 70%,
+      rgba(48, 79, 103, 0.1),
+      transparent 30%
+    );
+}
+
+
+/* =========================================
+   INTRO
+========================================= */
+
+.beliefs-intro {
+  position: relative;
+
+  max-width: 850px;
+
+  z-index: 3;
+}
+
+.beliefs-intro > span {
+  display: block;
+
+  margin-bottom: 3rem;
+
+  color: #55575c;
+
+  font-size: 0.52rem;
+  font-weight: 600;
+
+  letter-spacing: 0.15em;
+}
+
+.beliefs-intro h2 {
+  margin: 0;
+
+  font-size: clamp(
+    4rem,
+    7.5vw,
+    7.5rem
+  );
+
+  font-weight: 500;
+
+  line-height: 0.85;
+
+  letter-spacing: -0.075em;
+}
+
+.beliefs-intro h2 em {
+  color: #a45e79;
+
+  font-style: normal;
+}
+
+.beliefs-intro p {
+  max-width: 420px;
+
+  margin: 2.5rem 0 0;
+
+  color: #85878d;
+
+  font-size: 1rem;
+
+  line-height: 1.65;
+}
+
+
+/* =========================================
+   STAGE
+========================================= */
+
+.beliefs-stage {
+  position: relative;
+
+  height: 570px;
+
+  margin-top: 5rem;
+}
+
+
+/* =========================================
+   SVG CONNECTION
+========================================= */
+
+.beliefs-connection {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: visible;
+
+  pointer-events: none;
+
+  z-index: 0;
+}
+
+.belief-line {
+  fill: none;
+
+  stroke-width: 2;
+
+  stroke-linecap: round;
+
+  stroke-dasharray: 500;
+
+  stroke-dashoffset: 500;
+}
+
+.belief-line-one {
+  stroke: rgba(164, 94, 121, 0.65);
+}
+
+.belief-line-two {
+  stroke: rgba(91, 125, 149, 0.7);
+}
+
+.belief-dot {
+  opacity: 0;
+
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.belief-dot-one {
+  fill: #a45e79;
+}
+
+.belief-dot-two {
+  fill: #eee9ec;
+}
+
+.belief-dot-three {
+  fill: #5b7d95;
+}
+
+
+/* =========================================
+   BELIEF ITEMS
+========================================= */
+
+.belief {
+  position: absolute;
+
+  z-index: 2;
+
+  width: 250px;
+
+  opacity: 0;
+
+  transform: scale(0.94);
+
+  transform-origin: center;
+}
+
+.belief-number {
+  display: block;
+
+  margin-bottom: 0.9rem;
+
+  color: #55575c;
+
+  font-size: 0.5rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.14em;
+}
+
+.belief h3 {
+  margin: 0;
+
+  font-size: clamp(
+    2.2rem,
+    4vw,
+    4rem
+  );
+
+  font-weight: 500;
+
+  line-height: 0.9;
+
+  letter-spacing: -0.06em;
+}
+
+.belief p {
+  max-width: 230px;
+
+  margin: 1.2rem 0 0;
+
+  color: #777980;
+
+  font-size: 0.82rem;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================
+   INDIVIDUAL POSITIONS
+========================================= */
+
+.belief-clarity {
+  top: 60px;
+  left: 0;
+}
+
+.belief-clarity h3 {
+  color: #a45e79;
+}
+
+.belief-credibility {
+  top: 190px;
+  left: 42%;
+}
+
+.belief-credibility h3 {
+  color: #ded9dc;
+}
+
+.belief-conversion {
+  right: 0;
+  bottom: 40px;
+
+  text-align: right;
+}
+
+.belief-conversion p {
+  margin-left: auto;
+}
+
+.belief-conversion h3 {
+  color: #5b7d95;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+  .about-beliefs {
+    padding: 9rem 0 10rem;
+  }
+
+  .beliefs-stage {
+    height: 500px;
+  }
+
+  .belief {
+    width: 210px;
+  }
+
+  .belief-credibility {
+    left: 38%;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+  .about-beliefs {
+    padding: 7rem 0 8rem;
+  }
+
+  .beliefs-intro h2 {
+    font-size: clamp(
+      3.2rem,
+      13vw,
+      4.5rem
+    );
+  }
+
+  .beliefs-intro p {
+    font-size: 0.9rem;
+  }
+
+  .beliefs-stage {
+    height: auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5rem;
+
+    margin-top: 5rem;
+  }
+
+  .beliefs-connection {
+    display: none;
+  }
+
+  .belief {
+    position: relative;
+
+    top: auto;
+    right: auto;
+    left: auto;
+    bottom: auto;
+
+    width: min(
+      100%,
+      320px
+    );
+
+    text-align: left;
+  }
+
+  .belief h3 {
+    font-size: 3rem;
+  }
+
+  .belief p {
+    max-width: 280px;
+
+    margin-left: 0;
+  }
+
+  .belief-conversion {
+    margin-left: auto;
+
+    text-align: right;
+  }
+
+  .belief-conversion p {
+    margin-left: auto;
+  }
+
+}
+
+
+/* =========================================
+   SMALL PHONES
+========================================= */
+
+@media (max-width: 380px) {
+
+  .beliefs-intro h2 {
+    font-size: 3rem;
+  }
+
+  .belief h3 {
+    font-size: 2.7rem;
+  }
+
+}
+
+/* =======================================
+   WHAT WE BELIEVE — HORIZONTAL FLOW
+========================================= */
+
+.about-beliefs {
+  position: relative;
+
+  padding: 11rem 0 12rem;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 12% 50%,
+      rgba(126, 42, 68, 0.08),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 88% 50%,
+      rgba(48, 79, 103, 0.08),
+      transparent 28%
+    );
+}
+
+
+/* =========================================
+   INTRO
+========================================= */
+
+.beliefs-intro {
+  max-width: 950px;
+}
+
+.beliefs-intro > span {
+  display: block;
+
+  margin-bottom: 2.5rem;
+
+  color: #55575c;
+
+  font-size: 0.52rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.15em;
+
+  text-transform: uppercase;
+}
+
+.beliefs-intro h2 {
+  margin: 0;
+
+  color: #eee9ec;
+
+  font-size: clamp(
+    4rem,
+    7.5vw,
+    8rem
+  );
+
+  font-weight: 500;
+
+  line-height: 0.86;
+
+  letter-spacing: -0.075em;
+}
+
+.beliefs-intro h2 em {
+  color: #a45e79;
+
+  font-style: normal;
+}
+
+.beliefs-intro p {
+  max-width: 430px;
+
+  margin: 2.5rem 0 0;
+
+  color: #85878d;
+
+  font-size: 1rem;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================
+   HORIZONTAL FLOW
+========================================= */
+
+.beliefs-flow {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    150px
+    1fr
+    150px
+    1fr;
+
+  align-items: center;
+
+  width: 100%;
+
+  margin-top: 8rem;
+}
+
+/* =========================================
+   WHAT WE BELIEVE — HORIZONTAL FLOW
+========================================= */
+
+.about-beliefs {
+  position: relative;
+
+  padding: 11rem 0 12rem;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 12% 50%,
+      rgba(126, 42, 68, 0.08),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 88% 50%,
+      rgba(48, 79, 103, 0.08),
+      transparent 28%
+    );
+}
+
+
+/* =========================================
+   INTRO
+========================================= */
+
+.beliefs-intro {
+  max-width: 950px;
+}
+
+.beliefs-intro > span {
+  display: block;
+
+  margin-bottom: 2.5rem;
+
+  color: #55575c;
+
+  font-size: 0.52rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.15em;
+
+  text-transform: uppercase;
+}
+
+.beliefs-intro h2 {
+  margin: 0;
+
+  color: #eee9ec;
+
+  font-size: clamp(
+    4rem,
+    7.5vw,
+    8rem
+  );
+
+  font-weight: 500;
+
+  line-height: 0.86;
+
+  letter-spacing: -0.075em;
+}
+
+.beliefs-intro h2 em {
+  color: #a45e79;
+
+  font-style: normal;
+}
+
+.beliefs-intro p {
+  max-width: 430px;
+
+  margin: 2.5rem 0 0;
+
+  color: #85878d;
+
+  font-size: 1rem;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================
+   HORIZONTAL FLOW
+========================================= */
+
+.beliefs-flow {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    150px
+    1fr
+    150px
+    1fr;
+
+  align-items: center;
+
+  width: 100%;
+
+  margin-top: 8rem;
+}
+
+
+/* =========================================
+   BELIEFS
+========================================= */
+
+.belief {
+  position: relative;
+
+  opacity: 0;
+
+  transform:
+    translateY(20px)
+    scale(0.94);
+
+  transform-origin: center;
+}
+
+.belief-number {
+  display: block;
+
+  margin-bottom: 1rem;
+
+  color: #55575c;
+
+  font-size: 0.5rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.15em;
+}
+
+.belief h3 {
+  margin: 0;
+
+  font-size: clamp(
+    2.5rem,
+    4vw,
+    4.5rem
+  );
+
+  font-weight: 500;
+
+  line-height: 0.9;
+
+  letter-spacing: -0.065em;
+}
+
+.belief p {
+  max-width: 230px;
+
+  margin: 1.4rem 0 0;
+
+  color: #777980;
+
+  font-size: 0.82rem;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================
+   INDIVIDUAL COLORS
+========================================= */
+
+.belief-clarity h3 {
+  color: #a45e79;
+}
+
+.belief-credibility {
+  text-align: center;
+}
+
+.belief-credibility h3 {
+  color: #ded9dc;
+}
+
+.belief-credibility p {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.belief-conversion {
+  text-align: right;
+}
+
+.belief-conversion h3 {
+  color: #5b7d95;
+}
+
+.belief-conversion p {
+  margin-left: auto;
+}
+
+
+/* =========================================
+   ARROWS
+========================================= */
+
+.belief-arrow {
+  width: 100%;
+
+  height: 90px;
+
+  pointer-events: none;
+}
+
+.belief-arrow svg {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: visible;
+}
+
+.belief-arrow-line,
+.belief-arrow-head {
+  fill: none;
+
+  stroke-linecap: round;
+
+  stroke-linejoin: round;
+
+  vector-effect: non-scaling-stroke;
+}
+
+.belief-arrow-line {
+  stroke-width: 1.8;
+
+  stroke-dasharray: 300;
+
+  stroke-dashoffset: 300;
+}
+
+.belief-arrow-head {
+  stroke-width: 1.8;
+
+  opacity: 0;
+}
+
+.belief-arrow-one .belief-arrow-line,
+.belief-arrow-one .belief-arrow-head {
+  stroke: rgba(164, 94, 121, 0.75);
+}
+
+.belief-arrow-two .belief-arrow-line,
+.belief-arrow-two .belief-arrow-head {
+  stroke: rgba(91, 125, 149, 0.78);
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1000px) {
+
+  .beliefs-flow {
+    grid-template-columns:
+      1fr
+      90px
+      1fr
+      90px
+      1fr;
+
+    margin-top: 6rem;
+  }
+
+  .belief h3 {
+    font-size: clamp(
+      2rem,
+      4vw,
+      3.5rem
+    );
+  }
+
+  .belief p {
+    font-size: 0.76rem;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+  .about-beliefs {
+    padding: 7rem 0 8rem;
+  }
+
+  .beliefs-intro h2 {
+    font-size: clamp(
+      3.1rem,
+      13vw,
+      4.6rem
+    );
+  }
+
+  .beliefs-intro p {
+    font-size: 0.9rem;
+  }
+
+  .beliefs-flow {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 0;
+
+    margin-top: 5rem;
+  }
+
+  .belief {
+    width: 100%;
+
+    text-align: left;
+  }
+
+  .belief h3 {
+    font-size: 3rem;
+  }
+
+  .belief p {
+    margin-left: 0;
+    margin-right: 0;
+
+    max-width: 280px;
+  }
+
+  .belief-credibility {
+    text-align: left;
+  }
+
+  .belief-conversion {
+    text-align: left;
+  }
+
+  .belief-conversion p {
+    margin-left: 0;
+  }
+
+
+  /* -----------------------------------------
+     MOBILE ARROWS
+  ----------------------------------------- */
+
+  .belief-arrow {
+    width: 100%;
+
+    height: 90px;
+
+    padding-left: 25%;
+    padding-right: 25%;
+
+    transform: rotate(90deg);
+  }
+
+}
+
+
+/* =========================================
+   SMALL PHONES
+========================================= */
+
+@media (max-width: 380px) {
+
+  .beliefs-intro h2 {
+    font-size: 3rem;
+  }
+
+  .belief h3 {
+    font-size: 2.7rem;
+  }
+
+}

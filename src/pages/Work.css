@@ -1,0 +1,899 @@
+/* =========================================================
+   WORK PAGE
+========================================================= */
+
+.work-page {
+  width: 100%;
+  min-height: 100vh;
+
+  overflow-x: hidden;
+
+  background: #080809;
+  color: #eee9ec;
+}
+
+.work-container {
+  width: min(1180px, calc(100% - 80px));
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.work-intro-section {
+  padding: 150px 0 100px;
+}
+
+.work-intro {
+  width: 100%;
+}
+
+.work-intro-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding-bottom: 22px;
+
+  border-bottom: 1px solid
+    rgba(255, 255, 255, 0.09);
+
+  color: #73757b;
+
+  font-size: 9px;
+  font-weight: 600;
+
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.work-intro-bottom {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.3fr)
+    minmax(240px, 0.7fr);
+
+  align-items: end;
+
+  gap: 70px;
+
+  padding-top: 55px;
+}
+
+.work-intro-bottom h1 {
+  margin: 0;
+
+  font-size: clamp(
+    3rem,
+    5.5vw,
+    5.8rem
+  );
+
+  font-weight: 500;
+
+  line-height: 0.95;
+
+  letter-spacing: -0.055em;
+}
+
+.work-intro-bottom p {
+  max-width: 360px;
+
+  margin: 0;
+
+  color: #85878d;
+
+  font-size: 15px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   WORK LIST
+========================================================= */
+
+.work-list {
+  padding-bottom: 80px;
+}
+
+.work-item {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.65fr)
+    minmax(250px, 0.55fr);
+
+  align-items: center;
+
+  gap: clamp(45px, 7vw, 100px);
+
+  padding: 90px 0;
+
+  border-top: 1px solid
+    rgba(255, 255, 255, 0.08);
+}
+
+.work-item-reverse {
+  grid-template-columns:
+    minmax(250px, 0.55fr)
+    minmax(0, 1.65fr);
+}
+
+.work-item-reverse .work-image-link {
+  order: 2;
+}
+
+.work-item-reverse .work-info {
+  order: 1;
+}
+
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.work-image-link {
+  display: block;
+
+  width: 100%;
+
+  text-decoration: none;
+
+  perspective: 1200px;
+}
+
+.work-image-wrap {
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio: 16 / 10;
+
+  overflow: hidden;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.09);
+
+  border-radius: 15px;
+
+  background: #111114;
+
+  transform-origin: center bottom;
+
+  will-change: transform;
+}
+
+.work-image-inner {
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+}
+
+.work-image-inner img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  transition:
+    transform 0.8s
+    cubic-bezier(.2, .65, .2, 1);
+}
+
+.work-image-link:hover
+.work-image-inner img {
+  transform: scale(1.025);
+}
+
+
+/* =========================================================
+   IMAGE HOVER
+========================================================= */
+
+.work-image-overlay {
+  position: absolute;
+
+  left: 20px;
+  bottom: 20px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 10px 14px;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.16);
+
+  border-radius: 999px;
+
+  background:
+    rgba(8, 8, 9, 0.72);
+
+  backdrop-filter: blur(10px);
+
+  color: #eee9ec;
+
+  font-size: 8px;
+  font-weight: 600;
+
+  letter-spacing: 0.12em;
+
+  opacity: 0;
+
+  transform: translateY(8px);
+
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease;
+}
+
+.work-image-overlay span:last-child {
+  font-size: 13px;
+}
+
+.work-image-link:hover
+.work-image-overlay {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   INFO
+========================================================= */
+
+.work-info {
+  display: grid;
+
+  grid-template-columns: 30px 1fr;
+
+  gap: 20px;
+
+  align-self: center;
+}
+
+.work-info-number {
+  padding-top: 5px;
+
+  color: #55575c;
+
+  font-size: 9px;
+  font-weight: 600;
+
+  letter-spacing: 0.1em;
+}
+
+.work-info-main {
+  min-width: 0;
+}
+
+.work-category {
+  display: block;
+
+  margin-bottom: 16px;
+
+  color: #777980;
+
+  font-size: 8px;
+  font-weight: 600;
+
+  letter-spacing: 0.14em;
+
+  text-transform: uppercase;
+}
+
+.work-info h2 {
+  margin: 0;
+
+  color: #eee9ec;
+
+  font-size: clamp(
+    2rem,
+    3.2vw,
+    3.6rem
+  );
+
+  font-weight: 500;
+
+  line-height: 0.95;
+
+  letter-spacing: -0.055em;
+}
+
+.work-info p {
+  max-width: 330px;
+
+  margin: 22px 0 0;
+
+  color: #85878d;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
+.work-text-link {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 9px;
+
+  margin-top: 26px;
+
+  color: #ded9dc;
+
+  font-size: 8px;
+  font-weight: 600;
+
+  letter-spacing: 0.13em;
+
+  text-decoration: none;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.work-text-link span {
+  font-size: 13px;
+
+  transition:
+    transform 0.3s ease;
+}
+
+.work-text-link:hover {
+  color: #a45e79;
+
+  transform: translateX(3px);
+}
+
+.work-text-link:hover span {
+  transform: translate(3px, -3px);
+}
+
+
+/* =========================================================
+   CLOSING
+========================================================= */
+
+.work-closing {
+  padding: 80px 0 150px;
+}
+
+.work-closing-line {
+  width: 100%;
+  height: 1px;
+
+  margin-bottom: 55px;
+
+  background:
+    rgba(255, 255, 255, 0.09);
+}
+
+.work-closing > .work-container > span {
+  color: #55575c;
+
+  font-size: 8px;
+  font-weight: 600;
+
+  letter-spacing: 0.15em;
+}
+
+.work-closing h2 {
+  max-width: 850px;
+
+  margin: 25px 0 0;
+
+  font-size: clamp(
+    2.8rem,
+    5vw,
+    5.4rem
+  );
+
+  font-weight: 500;
+
+  line-height: 0.95;
+
+  letter-spacing: -0.06em;
+}
+
+.work-closing h2 em {
+  display: block;
+
+  color: #a45e79;
+
+  font-style: normal;
+}
+
+.work-closing-link {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 12px;
+
+  margin-top: 35px;
+
+  color: #ded9dc;
+
+  font-size: 9px;
+  font-weight: 600;
+
+  letter-spacing: 0.13em;
+
+  text-decoration: none;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.work-closing-link span {
+  font-size: 15px;
+
+  transition:
+    transform 0.3s ease;
+}
+
+.work-closing-link:hover {
+  color: #a45e79;
+
+  transform: translateX(3px);
+}
+
+.work-closing-link:hover span {
+  transform: translate(3px, -3px);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .work-container {
+    width: calc(100% - 50px);
+  }
+
+  .work-intro-section {
+    padding: 125px 0 80px;
+  }
+
+  .work-intro-bottom {
+    grid-template-columns: 1fr 0.75fr;
+
+    gap: 40px;
+  }
+
+  .work-item,
+  .work-item-reverse {
+    grid-template-columns:
+      minmax(0, 1.4fr)
+      minmax(210px, 0.6fr);
+
+    gap: 40px;
+
+    padding: 75px 0;
+  }
+
+  .work-info {
+    grid-template-columns: 24px 1fr;
+
+    gap: 14px;
+  }
+
+  .work-info h2 {
+    font-size: clamp(
+      1.8rem,
+      4vw,
+      3rem
+    );
+  }
+
+  .work-info p {
+    font-size: 13px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+  .work-container {
+    width: calc(100% - 32px);
+  }
+
+  .work-intro-section {
+    padding: 100px 0 55px;
+  }
+
+  .work-intro-top {
+    padding-bottom: 17px;
+
+    font-size: 7px;
+
+    letter-spacing: 0.1em;
+  }
+
+  .work-intro-bottom {
+    display: block;
+
+    padding-top: 35px;
+  }
+
+  .work-intro-bottom h1 {
+    font-size: clamp(
+      2.8rem,
+      12vw,
+      4.2rem
+    );
+
+    line-height: 0.94;
+  }
+
+  .work-intro-bottom p {
+    max-width: 330px;
+
+    margin-top: 22px;
+
+    font-size: 13px;
+
+    line-height: 1.65;
+  }
+
+
+  /* PROJECT */
+
+  .work-list {
+    padding-bottom: 20px;
+  }
+
+  .work-item,
+  .work-item-reverse {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 25px;
+
+    padding: 60px 0 70px;
+  }
+
+  .work-item-reverse .work-image-link,
+  .work-item-reverse .work-info {
+    order: initial;
+  }
+
+  .work-image-wrap {
+    aspect-ratio: 16 / 11;
+
+    border-radius: 11px;
+  }
+
+  .work-image-overlay {
+    left: 12px;
+    bottom: 12px;
+
+    padding: 8px 11px;
+
+    font-size: 6px;
+
+    opacity: 1;
+
+    transform: none;
+  }
+
+  .work-image-overlay span:last-child {
+    font-size: 11px;
+  }
+
+  .work-info {
+    display: grid;
+
+    grid-template-columns: 24px 1fr;
+
+    gap: 12px;
+  }
+
+  .work-info-number {
+    padding-top: 4px;
+
+    font-size: 7px;
+  }
+
+  .work-category {
+    margin-bottom: 10px;
+
+    font-size: 7px;
+  }
+
+  .work-info h2 {
+    font-size: clamp(
+      2rem,
+      10vw,
+      3.2rem
+    );
+
+    line-height: 0.94;
+  }
+
+  .work-info p {
+    max-width: 330px;
+
+    margin-top: 16px;
+
+    font-size: 12.5px;
+
+    line-height: 1.65;
+  }
+
+  .work-text-link {
+    margin-top: 20px;
+
+    font-size: 7px;
+  }
+
+
+  /* CLOSING */
+
+  .work-closing {
+    padding: 60px 0 90px;
+  }
+
+  .work-closing-line {
+    margin-bottom: 35px;
+  }
+
+  .work-closing > .work-container > span {
+    font-size: 7px;
+  }
+
+  .work-closing h2 {
+    margin-top: 18px;
+
+    font-size: clamp(
+      2.6rem,
+      11vw,
+      4rem
+    );
+  }
+
+  .work-closing-link {
+    margin-top: 28px;
+
+    font-size: 7px;
+  }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .work-container {
+    width: calc(100% - 24px);
+  }
+
+  .work-intro-section {
+    padding-top: 85px;
+  }
+
+  .work-intro-bottom h1 {
+    font-size: 2.65rem;
+  }
+
+  .work-image-wrap {
+    border-radius: 9px;
+  }
+
+  .work-info h2 {
+    font-size: 1.95rem;
+  }
+
+  .work-info p {
+    font-size: 12px;
+  }
+
+  .work-closing h2 {
+    font-size: 2.5rem;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .work-image-inner img,
+  .work-image-overlay,
+  .work-text-link,
+  .work-text-link span,
+  .work-closing-link,
+  .work-closing-link span {
+    transition: none;
+  }
+}
+
+/* =========================================================
+   WORK HERO — DESKTOP LAYOUT FIX
+   Overrides any global main / layout rules
+========================================================= */
+
+.work-page {
+  display: block !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+
+  position: relative;
+  left: auto;
+  right: auto;
+}
+
+.work-intro-section {
+  display: block !important;
+  width: 100% !important;
+  max-width: none !important;
+
+  margin: 0 !important;
+  padding: 150px 0 100px !important;
+}
+
+.work-intro-section .work-container {
+  display: block !important;
+
+  width: min(1180px, calc(100% - 80px)) !important;
+  max-width: 1180px !important;
+
+  margin-left: auto !important;
+  margin-right: auto !important;
+
+  padding: 0 !important;
+}
+
+.work-intro {
+  display: block !important;
+
+  width: 100% !important;
+  max-width: none !important;
+
+  margin: 0 !important;
+}
+
+.work-intro-top {
+  display: flex !important;
+
+  width: 100% !important;
+
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+
+.work-intro-bottom {
+  display: grid !important;
+
+  width: 100% !important;
+
+  grid-template-columns:
+    minmax(0, 1.25fr)
+    minmax(280px, 0.75fr) !important;
+
+  gap: 80px !important;
+
+  align-items: end !important;
+
+  margin: 0 !important;
+  padding-top: 55px !important;
+}
+
+.work-intro-bottom h1 {
+  width: 100% !important;
+  max-width: none !important;
+
+  margin: 0 !important;
+}
+
+.work-intro-bottom p {
+  width: 100% !important;
+  max-width: 360px !important;
+
+  margin: 0 !important;
+}
+
+
+/* =========================================================
+   DESKTOP
+========================================================= */
+
+@media (min-width: 901px) {
+
+  .work-intro-section {
+    min-height: auto !important;
+  }
+
+  .work-intro-bottom h1 {
+    font-size: clamp(
+      4rem,
+      6vw,
+      6.4rem
+    ) !important;
+
+    line-height: 0.92 !important;
+
+    letter-spacing: -0.055em !important;
+  }
+
+  .work-intro-bottom p {
+    font-size: 15px !important;
+    line-height: 1.7 !important;
+  }
+}
+
+
+/* =========================================================
+   TABLET / MOBILE
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .work-intro-section .work-container {
+    width: calc(100% - 50px) !important;
+  }
+
+  .work-intro-bottom {
+    grid-template-columns:
+      minmax(0, 1.2fr)
+      minmax(220px, 0.8fr) !important;
+
+    gap: 45px !important;
+  }
+}
+
+
+@media (max-width: 650px) {
+
+  .work-intro-section {
+    padding: 100px 0 55px !important;
+  }
+
+  .work-intro-section .work-container {
+    width: calc(100% - 32px) !important;
+  }
+
+  .work-intro-bottom {
+    display: block !important;
+  }
+
+  .work-intro-bottom h1 {
+    font-size: clamp(
+      2.8rem,
+      12vw,
+      4.2rem
+    ) !important;
+  }
+
+  .work-intro-bottom p {
+    margin-top: 22px !important;
+  }
+}

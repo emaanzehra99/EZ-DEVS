@@ -1,0 +1,1673 @@
+.hero {
+  position: relative;
+
+  min-height: 100svh;
+
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+
+  isolation: isolate;
+}
+
+
+/* =================================
+   BACKGROUND
+================================= */
+
+.hero-background {
+  position: absolute;
+  inset: 0;
+
+  z-index: -1;
+
+  pointer-events: none;
+}
+
+
+.hero-grid {
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.025) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.025) 1px,
+      transparent 1px
+    );
+
+  background-size: 80px 80px;
+
+  mask-image: linear-gradient(
+    to bottom,
+    black,
+    transparent 85%
+  );
+
+  opacity: 0.45;
+}
+
+
+.hero-glow {
+  position: absolute;
+
+  width: 40rem;
+  height: 40rem;
+
+  border-radius: 50%;
+
+  filter: blur(110px);
+
+  opacity: 0.12;
+
+  will-change: transform, opacity;
+
+  transform: translate3d(0, 0, 0);
+}
+
+.hero-glow-burgundy {
+  top: 5%;
+  right: -12%;
+
+  background:
+    radial-gradient(
+      circle,
+      var(--color-burgundy-light) 0%,
+      var(--color-burgundy) 35%,
+      transparent 72%
+    );
+}
+
+
+.hero-glow-blue {
+  bottom: -12%;
+  left: -5%;
+
+  width: 34rem;
+  height: 34rem;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(113, 135, 157, 0.5) 0%,
+      rgba(82, 107, 131, 0.28) 35%,
+      transparent 72%
+    );
+
+  opacity: 0.3;
+}
+
+
+/* =================================
+   CONTAINER
+================================= */
+
+.hero-container {
+  position: relative;
+
+  width: min(
+    calc(100% - (var(--container-padding) * 2)),
+    var(--container-width)
+  );
+
+  min-height: 100svh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding-top: 8rem;
+  padding-bottom: 4rem;
+}
+
+
+/* =================================
+   CONTENT
+================================= */
+
+.hero-content {
+  max-width: 1050px;
+}
+
+
+.hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+
+  margin-bottom: 2rem;
+
+  color: var(--color-blue-light);
+
+  font-size: 0.68rem;
+  font-weight: var(--weight-semibold);
+
+  letter-spacing: 0.18em;
+}
+
+
+.hero-eyebrow-dot {
+  width: 7px;
+  height: 7px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: var(--color-burgundy-light);
+
+  box-shadow:
+    0 0 0 5px rgba(145, 64, 90, 0.1),
+    0 0 18px rgba(145, 64, 90, 0.45);
+}
+
+
+/* =================================
+   TITLE
+================================= */
+
+.hero-title {
+  display: flex;
+  flex-direction: column;
+
+  max-width: 1050px;
+
+  color: var(--color-white);
+
+  font-size: var(--text-hero);
+  font-weight: var(--weight-semibold);
+
+  line-height: 1.04;
+  letter-spacing: -0.055em;
+
+  padding-top: 0.08em;
+  padding-bottom: 0.1em;
+}
+
+.hero-title-accent {
+  display: block;
+
+  color: var(--color-burgundy-light);
+
+  padding-bottom: 0.08em;
+}
+
+.hero-title-line {
+  display: block;
+
+  padding-top: 0.04em;
+  padding-bottom: 0.04em;
+}
+
+
+/* =================================
+   DESCRIPTION
+================================= */
+
+.hero-description {
+  max-width: 650px;
+
+  margin-top: 2rem;
+
+  color: var(--color-muted);
+
+  font-size: clamp(
+    0.95rem,
+    1.3vw,
+    1.1rem
+  );
+
+  line-height: 1.8;
+}
+
+
+/* =================================
+   ACTIONS
+================================= */
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  margin-top: 2.5rem;
+}
+
+
+.hero-primary-btn,
+.hero-secondary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 54px;
+
+  border-radius: var(--border-radius-pill);
+
+  font-size: 0.78rem;
+  font-weight: var(--weight-semibold);
+
+  transition:
+    transform var(--transition-base),
+    background var(--transition-base),
+    border-color var(--transition-base),
+    box-shadow var(--transition-base);
+}
+
+
+.hero-primary-btn {
+  gap: 0.7rem;
+
+  padding: 0.75rem 1.25rem;
+
+  border: 1px solid rgba(145, 64, 90, 0.5);
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--color-burgundy),
+      var(--color-burgundy-dark)
+    );
+
+  color: var(--color-white);
+
+  box-shadow:
+    0 12px 30px rgba(76, 23, 40, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+
+.hero-primary-btn:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 18px 38px rgba(76, 23, 40, 0.38),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+
+.hero-btn-arrow {
+  font-size: 1rem;
+}
+
+
+.hero-secondary-btn {
+  padding: 0.75rem 1.25rem;
+
+  border: 1px solid var(--color-border);
+
+  color: var(--color-text);
+
+  background: rgba(255, 255, 255, 0.025);
+}
+
+
+.hero-secondary-btn:hover {
+  transform: translateY(-3px);
+
+  border-color: rgba(82, 107, 131, 0.5);
+
+  background: rgba(82, 107, 131, 0.08);
+
+  color: var(--color-white);
+}
+
+
+/* =================================
+   BOTTOM DETAILS
+================================= */
+
+.hero-bottom {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 2rem;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+
+.hero-scroll {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+
+  color: var(--color-muted);
+
+  font-size: 0.58rem;
+  font-weight: var(--weight-medium);
+
+  letter-spacing: 0.15em;
+}
+
+
+.hero-scroll-line {
+  width: 38px;
+  height: 1px;
+
+  background: var(--color-blue);
+}
+
+
+.hero-location {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.25rem;
+
+  color: var(--color-muted);
+
+  font-size: 0.55rem;
+  font-weight: var(--weight-medium);
+
+  letter-spacing: 0.15em;
+}
+
+
+/* =================================
+   TABLET
+================================= */
+
+@media (max-width: 900px) {
+  .hero-container {
+    padding-top: 7rem;
+  }
+
+  .hero-title {
+    font-size: clamp(
+      3.2rem,
+      9vw,
+      6rem
+    );
+  }
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 700px) {
+  .hero-container {
+    padding-top: 7rem;
+    padding-bottom: 6rem;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero-eyebrow {
+    margin-bottom: 1.5rem;
+
+    font-size: 0.58rem;
+
+    letter-spacing: 0.13em;
+  }
+
+  .hero-title {
+    font-size: clamp(
+      2.75rem,
+      13vw,
+      4.5rem
+    );
+
+    line-height: 1.06;
+    letter-spacing: -0.045em;
+  }
+
+  .hero-description {
+    margin-top: 1.5rem;
+
+    font-size: 0.9rem;
+    line-height: 1.75;
+  }
+
+  .hero-actions {
+    align-items: stretch;
+    flex-direction: column;
+
+    max-width: 300px;
+
+    margin-top: 2rem;
+  }
+
+  .hero-primary-btn,
+  .hero-secondary-btn {
+    width: 100%;
+  }
+
+  .hero-bottom {
+    bottom: 1.25rem;
+  }
+
+  .hero-location {
+    display: none;
+  }
+
+  .hero-scroll {
+    font-size: 0.52rem;
+  }
+
+  .hero-grid {
+    background-size: 55px 55px;
+  }
+
+  .hero-glow {
+    width: 25rem;
+    height: 25rem;
+
+    filter: blur(80px);
+  }
+}
+
+
+/* =================================
+   VERY SMALL DEVICES
+================================= */
+
+@media (max-width: 360px) {
+  .hero-container {
+    padding-top: 6.5rem;
+  }
+
+  .hero-title {
+    font-size: 2.55rem;
+  }
+
+  .hero-description {
+    font-size: 0.86rem;
+  }
+
+  .hero-actions {
+    max-width: 100%;
+  }
+}
+
+/* =================================
+   HERO MAIN LAYOUT
+================================= */
+
+.hero-main {
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(420px, 0.85fr);
+
+  align-items: center;
+
+  gap: 3rem;
+}
+
+
+/* =================================
+   PORTRAIT AREA
+================================= */
+
+.hero-portraits {
+  position: relative;
+
+  width: 100%;
+  max-width: 560px;
+
+  height: 520px;
+
+  justify-self: end;
+
+  isolation: isolate;
+}
+
+
+/* =================================
+   SUBTLE ORBIT
+================================= */
+
+.portrait-orbit {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: 430px;
+  height: 430px;
+
+  border: 1px solid rgba(255, 255, 255, 0.055);
+
+  border-radius: 50%;
+
+  transform: translate(-50%, -50%);
+
+  opacity: 0.6;
+}
+
+
+/* =================================
+   PORTRAIT AMBIENT GLOWS
+================================= */
+
+.portrait-glow {
+  position: absolute;
+
+  width: 260px;
+  height: 260px;
+
+  border-radius: 50%;
+
+  filter: blur(70px);
+
+  pointer-events: none;
+
+  z-index: -1;
+}
+
+
+.portrait-glow-burgundy {
+  top: 55px;
+  right: 35px;
+
+  background: var(--color-burgundy);
+
+  opacity: 0.24;
+}
+
+
+.portrait-glow-blue {
+  bottom: 55px;
+  left: 40px;
+
+  background: var(--color-blue);
+
+  opacity: 0.22;
+}
+
+
+/* =================================
+   INTERSECTION
+================================= */
+
+.portrait-intersection-glow {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: 150px;
+  height: 150px;
+
+  border-radius: 50%;
+
+  transform: translate(-50%, -50%);
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(145, 64, 90, 0.48) 0%,
+      rgba(82, 107, 131, 0.42) 35%,
+      rgba(113, 135, 157, 0.18) 55%,
+      transparent 75%
+    );
+
+  filter: blur(18px);
+
+  opacity: 0.55;
+
+  pointer-events: none;
+
+  z-index: 3;
+}
+
+
+/* =================================
+   PORTRAIT
+================================= */
+
+.portrait {
+  position: absolute;
+
+  width: 280px;
+  height: 280px;
+}
+
+
+/* YOUR POSITION */
+
+.portrait-you {
+  top: 35px;
+  right: 45px;
+
+  z-index: 2;
+}
+
+
+/* BROTHER POSITION */
+
+.portrait-brother {
+  bottom: 35px;
+  left: 45px;
+
+  z-index: 1;
+}
+
+
+/* =================================
+   PORTRAIT IMAGE
+================================= */
+
+.portrait-ring {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  padding: 5px;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(145, 64, 90, 0.9),
+      rgba(255, 255, 255, 0.08),
+      rgba(82, 107, 131, 0.9)
+    );
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.42),
+    inset 0 1px 0 rgba(255, 255, 255, 0.16);
+}
+
+
+.portrait-brother .portrait-ring {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(82, 107, 131, 0.95),
+      rgba(255, 255, 255, 0.08),
+      rgba(145, 64, 90, 0.65)
+    );
+}
+
+
+.portrait-ring img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+
+  border: 2px solid rgba(9, 10, 13, 0.9);
+
+  filter: saturate(0.9) contrast(1.04);
+
+  background: var(--color-surface);
+}
+
+
+/* =================================
+   LABEL
+================================= */
+
+.portrait-label {
+  position: absolute;
+
+  bottom: -2.2rem;
+  left: 50%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 0.2rem;
+
+  transform: translateX(-50%);
+
+  white-space: nowrap;
+
+  text-align: center;
+}
+
+
+.portrait-label span {
+  color: var(--color-white);
+
+  font-size: 0.62rem;
+  font-weight: var(--weight-semibold);
+
+  letter-spacing: 0.14em;
+}
+
+
+.portrait-label small {
+  color: var(--color-muted);
+
+  font-size: 0.48rem;
+  font-weight: var(--weight-medium);
+
+  letter-spacing: 0.12em;
+}
+
+
+/* =================================
+   TABLET
+================================= */
+
+@media (max-width: 1050px) {
+
+  .hero-main {
+    grid-template-columns: minmax(0, 1fr) minmax(350px, 0.8fr);
+
+    gap: 1.5rem;
+  }
+
+  .hero-portraits {
+    height: 440px;
+    transform: scale(0.85);
+    transform-origin: center right;
+  }
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 700px) {
+
+  .hero-main {
+    display: flex;
+    flex-direction: column;
+
+    gap: 4rem;
+
+    align-items: stretch;
+  }
+
+
+  .hero-portraits {
+    width: 100%;
+
+    height: 390px;
+
+    max-width: 440px;
+
+    margin: 0 auto;
+
+    transform: none;
+  }
+
+
+  .portrait {
+    width: 210px;
+    height: 210px;
+  }
+
+
+  .portrait-you {
+    top: 15px;
+    right: 5%;
+  }
+
+
+  .portrait-brother {
+    bottom: 25px;
+    left: 5%;
+  }
+
+
+  .portrait-orbit {
+    width: 320px;
+    height: 320px;
+  }
+
+
+  .portrait-intersection-glow {
+    width: 110px;
+    height: 110px;
+  }
+
+
+  .portrait-label {
+    bottom: -1.8rem;
+  }
+
+
+  .portrait-glow {
+    width: 190px;
+    height: 190px;
+
+    filter: blur(55px);
+  }
+}
+
+
+/* =================================
+   VERY SMALL DEVICES
+================================= */
+
+@media (max-width: 380px) {
+
+  .hero-main {
+    gap: 3rem;
+  }
+
+  .hero-portraits {
+    height: 340px;
+  }
+
+  .portrait {
+    width: 175px;
+    height: 175px;
+  }
+
+  .portrait-you {
+    right: 2%;
+  }
+
+  .portrait-brother {
+    left: 2%;
+  }
+
+  .portrait-orbit {
+    width: 270px;
+    height: 270px;
+  }
+}
+
+/* =================================
+   PORTRAIT AREA
+================================= */
+
+.hero-portraits {
+  position: relative;
+
+  width: min(100%, 560px);
+  height: clamp(400px, 36vw, 520px);
+
+  justify-self: end;
+
+  isolation: isolate;
+}
+
+
+/* =================================
+   ORBIT
+================================= */
+
+.portrait-orbit {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: clamp(300px, 31vw, 430px);
+  aspect-ratio: 1;
+
+  border: 1px solid rgba(255, 255, 255, 0.055);
+  border-radius: 50%;
+
+  transform: translate(-50%, -50%);
+
+  opacity: 0.6;
+
+  pointer-events: none;
+}
+
+
+/* =================================
+   AMBIENT GLOWS
+================================= */
+
+.portrait-glow {
+  position: absolute;
+
+  width: clamp(190px, 20vw, 260px);
+  aspect-ratio: 1;
+
+  border-radius: 50%;
+
+  filter: blur(70px);
+
+  pointer-events: none;
+
+  z-index: -1;
+}
+
+.portrait-glow-burgundy {
+  top: 7%;
+  right: 5%;
+
+  background: var(--color-burgundy);
+
+  opacity: 0.24;
+}
+
+.portrait-glow-blue {
+  bottom: 7%;
+  left: 5%;
+
+  background: var(--color-blue);
+
+  opacity: 0.22;
+}
+
+
+/* =================================
+   INTERSECTION GLOW
+================================= */
+
+.portrait-intersection-glow {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: clamp(90px, 10vw, 150px);
+  aspect-ratio: 1;
+
+  border-radius: 50%;
+
+  transform: translate(-50%, -50%);
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(145, 64, 90, 0.48) 0%,
+      rgba(82, 107, 131, 0.42) 35%,
+      rgba(113, 135, 157, 0.18) 55%,
+      transparent 75%
+    );
+
+  filter: blur(18px);
+
+  opacity: 0.55;
+
+  pointer-events: none;
+
+  z-index: 3;
+}
+
+
+/* =================================
+   PORTRAIT
+================================= */
+
+.portrait {
+  position: absolute;
+
+  width: clamp(190px, 23vw, 280px);
+  aspect-ratio: 1;
+}
+
+
+/*
+   IMPORTANT:
+
+   These are percentages rather than
+   fixed pixel coordinates.
+
+   This keeps the composition proportional
+   as the viewport changes.
+*/
+
+.portrait-you {
+  top: 7%;
+  right: 5%;
+
+  z-index: 2;
+}
+
+.portrait-brother {
+  bottom: 7%;
+  left: 5%;
+
+  z-index: 1;
+}
+
+
+/* =================================
+   IMAGE FRAME
+================================= */
+
+.portrait-ring {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  padding: clamp(3px, 0.4vw, 5px);
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(145, 64, 90, 0.9),
+      rgba(255, 255, 255, 0.08),
+      rgba(82, 107, 131, 0.9)
+    );
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.42),
+    inset 0 1px 0 rgba(255, 255, 255, 0.16);
+}
+
+.portrait-brother .portrait-ring {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(82, 107, 131, 0.95),
+      rgba(255, 255, 255, 0.08),
+      rgba(145, 64, 90, 0.65)
+    );
+}
+
+
+.portrait-ring img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+
+  border: 2px solid rgba(9, 10, 13, 0.9);
+
+  filter:
+    saturate(0.9)
+    contrast(1.04);
+
+  background: var(--color-surface);
+}
+
+
+/* =================================
+   LABEL
+================================= */
+
+.portrait-label {
+  position: absolute;
+
+  left: 50%;
+  bottom: clamp(-2.2rem, -3vw, -1.7rem);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 0.2rem;
+
+  transform: translateX(-50%);
+
+  white-space: nowrap;
+
+  text-align: center;
+}
+
+.portrait-label span {
+  color: var(--color-white);
+
+  font-size: clamp(0.5rem, 0.6vw, 0.62rem);
+  font-weight: var(--weight-semibold);
+
+  letter-spacing: 0.14em;
+}
+
+.portrait-label small {
+  color: var(--color-muted);
+
+  font-size: clamp(0.42rem, 0.48vw, 0.48rem);
+  font-weight: var(--weight-medium);
+
+  letter-spacing: 0.12em;
+}
+
+
+/* =================================
+   TABLET / SMALL LAPTOP
+================================= */
+
+@media (max-width: 1050px) {
+
+  .hero-main {
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(330px, 0.8fr);
+
+    gap: 1.5rem;
+  }
+
+  .hero-portraits {
+    height: 430px;
+
+    transform: scale(0.9);
+    transform-origin: center right;
+  }
+
+  .portrait {
+    width: 230px;
+  }
+
+  .portrait-you {
+    top: 5%;
+    right: 3%;
+  }
+
+  .portrait-brother {
+    bottom: 5%;
+    left: 3%;
+  }
+}
+
+
+/* =================================
+   TABLET
+================================= */
+
+@media (max-width: 820px) {
+
+  .hero-main {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .hero-content {
+    max-width: 760px;
+  }
+
+  .hero-portraits {
+    width: min(100%, 500px);
+    height: 430px;
+
+    margin-inline: auto;
+
+    justify-self: center;
+
+    transform: none;
+  }
+
+  .portrait {
+    width: clamp(205px, 30vw, 250px);
+  }
+
+  .portrait-you {
+    top: 2%;
+    right: 4%;
+  }
+
+  .portrait-brother {
+    bottom: 2%;
+    left: 4%;
+  }
+
+  .portrait-orbit {
+    width: 340px;
+  }
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 600px) {
+
+  .hero-main {
+    gap: 3.5rem;
+  }
+
+  .hero-portraits {
+    width: 100%;
+
+    height: min(92vw, 390px);
+
+    max-width: 420px;
+  }
+
+  .portrait {
+    width: clamp(
+      170px,
+      43vw,
+      205px
+    );
+  }
+
+  /*
+     The portraits overlap intentionally,
+     but the overlap is controlled by
+     viewport width.
+  */
+
+  .portrait-you {
+    top: 2%;
+    right: 4%;
+  }
+
+  .portrait-brother {
+    bottom: 2%;
+    left: 4%;
+  }
+
+  .portrait-orbit {
+    width: 78%;
+  }
+
+  .portrait-intersection-glow {
+    width: 100px;
+
+    filter: blur(16px);
+  }
+
+  .portrait-glow {
+    width: 180px;
+
+    filter: blur(55px);
+  }
+}
+
+
+/* =================================
+   SMALL PHONES
+================================= */
+
+@media (max-width: 420px) {
+
+  .hero-portraits {
+    height: 330px;
+  }
+
+  .portrait {
+    width: 165px;
+  }
+
+  .portrait-you {
+    right: 1%;
+  }
+
+  .portrait-brother {
+    left: 1%;
+  }
+
+  .portrait-orbit {
+    width: 280px;
+  }
+
+  .portrait-label {
+    bottom: -1.7rem;
+  }
+}
+
+
+/* =================================
+   VERY SMALL PHONES
+================================= */
+
+@media (max-width: 360px) {
+
+  .hero-portraits {
+    height: 300px;
+  }
+
+  .portrait {
+    width: 145px;
+  }
+
+  .portrait-you {
+    top: 1%;
+    right: 0;
+  }
+
+  .portrait-brother {
+    bottom: 1%;
+    left: 0;
+  }
+
+  .portrait-orbit {
+    width: 250px;
+  }
+
+  .portrait-intersection-glow {
+    width: 80px;
+  }
+}
+
+.portrait {
+  position: absolute;
+
+  width: clamp(190px, 23vw, 280px);
+  height: clamp(190px, 23vw, 280px);
+
+  aspect-ratio: 1 / 1;
+}
+
+.portrait-ring {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  aspect-ratio: 1 / 1;
+
+  padding: clamp(3px, 0.4vw, 5px);
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(145, 64, 90, 0.9),
+      rgba(255, 255, 255, 0.08),
+      rgba(82, 107, 131, 0.9)
+    );
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.42),
+    inset 0 1px 0 rgba(255, 255, 255, 0.16);
+
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   HERO RESPONSIVE FIX
+   ONLY fixes portrait responsiveness
+   ========================================================= */
+
+
+/* =================================
+   TABLET / SMALL LAPTOP
+================================= */
+
+@media (max-width: 1050px) {
+
+  .hero-main {
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(350px, 0.8fr);
+
+    gap: 1.5rem;
+  }
+
+  .hero-portraits {
+    height: 440px;
+
+    transform: scale(0.85);
+
+    transform-origin: center right;
+  }
+
+  .portrait {
+    width: 230px;
+    height: 230px;
+
+    aspect-ratio: 1 / 1;
+  }
+
+  /*
+     Keep the ORIGINAL diagonal composition,
+     but bring the circles close enough to
+     physically intersect.
+  */
+
+  .portrait-you {
+    top: 8%;
+    right: 4%;
+  }
+
+  .portrait-brother {
+    bottom: 8%;
+    left: 4%;
+  }
+}
+
+
+/* =================================
+   TABLET
+================================= */
+
+@media (max-width: 820px) {
+
+  .hero-main {
+    grid-template-columns: 1fr;
+
+    gap: 3rem;
+  }
+
+  .hero-portraits {
+    width: min(100%, 500px);
+
+    height: 430px;
+
+    margin-inline: auto;
+
+    justify-self: center;
+
+    transform: none;
+  }
+
+  .portrait {
+    width: clamp(
+      205px,
+      30vw,
+      250px
+    );
+
+    height: clamp(
+      205px,
+      30vw,
+      250px
+    );
+
+    aspect-ratio: 1 / 1;
+  }
+
+  /*
+     SAME diagonal positioning.
+     Only the distance is tightened.
+  */
+
+  .portrait-you {
+    top: 8%;
+    right: 3%;
+  }
+
+  .portrait-brother {
+    bottom: 8%;
+    left: 3%;
+  }
+
+  .portrait-orbit {
+    width: 340px;
+    height: 340px;
+  }
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 700px) {
+
+  .hero-main {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4rem;
+
+    align-items: stretch;
+  }
+
+  .hero-portraits {
+    width: 100%;
+
+    height: 390px;
+
+    max-width: 440px;
+
+    margin: 0 auto;
+
+    transform: none;
+  }
+
+  /*
+     IMPORTANT:
+     Width AND height are explicitly
+     identical, so the circles cannot
+     become oval.
+  */
+
+  .portrait {
+    width: 210px;
+    height: 210px;
+
+    aspect-ratio: 1 / 1;
+
+    border-radius: 50%;
+  }
+
+  /*
+     Keep the original diagonal layout.
+
+     The vertical positions are brought
+     toward the center just enough to make
+     the two circles intersect.
+  */
+
+  .portrait-you {
+    top: 10%;
+    right: 5%;
+  }
+
+  .portrait-brother {
+    bottom: 10%;
+    left: 5%;
+  }
+
+  .portrait-orbit {
+    width: 320px;
+    height: 320px;
+  }
+
+  .portrait-intersection-glow {
+    width: 110px;
+    height: 110px;
+  }
+
+  .portrait-label {
+    bottom: -1.8rem;
+  }
+
+  .portrait-glow {
+    width: 190px;
+    height: 190px;
+
+    filter: blur(55px);
+  }
+}
+
+
+/* =================================
+   SMALL PHONES
+================================= */
+
+@media (max-width: 420px) {
+
+  .hero-portraits {
+    height: 330px;
+  }
+
+  .portrait {
+    width: 165px;
+    height: 165px;
+
+    aspect-ratio: 1 / 1;
+
+    border-radius: 50%;
+  }
+
+  /*
+     DO NOT move them to the extreme
+     left/right edges.
+
+     Keeping them inward maintains
+     the overlap.
+  */
+
+  .portrait-you {
+    top: 9%;
+    right: 2%;
+  }
+
+  .portrait-brother {
+    bottom: 9%;
+    left: 2%;
+  }
+
+  .portrait-orbit {
+    width: 280px;
+    height: 280px;
+  }
+
+  .portrait-label {
+    bottom: -1.7rem;
+  }
+}
+
+
+/* =================================
+   VERY SMALL PHONES
+================================= */
+
+@media (max-width: 360px) {
+
+  .hero-portraits {
+    height: 300px;
+  }
+
+  .portrait {
+    width: 145px;
+    height: 145px;
+
+    aspect-ratio: 1 / 1;
+
+    border-radius: 50%;
+  }
+
+  /*
+     Keep the same diagonal relationship,
+     but bring both portraits inward.
+  */
+
+  .portrait-you {
+    top: 8%;
+    right: 0;
+  }
+
+  .portrait-brother {
+    bottom: 8%;
+    left: 0;
+  }
+
+  .portrait-orbit {
+    width: 250px;
+    height: 250px;
+  }
+
+  .portrait-intersection-glow {
+    width: 80px;
+    height: 80px;
+  }
+}

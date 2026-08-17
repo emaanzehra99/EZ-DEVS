@@ -1,0 +1,584 @@
+/* =========================================================
+   PROCESS PAGE
+========================================================= */
+
+.process-page {
+  width: 100%;
+  min-height: 100vh;
+
+  overflow-x: hidden;
+
+  background: #080809;
+  color: #eee9ec;
+}
+
+.process-container {
+  width: min(1120px, calc(100% - 80px));
+
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.process-intro-section {
+  padding: 150px 0 90px;
+}
+
+.process-intro-top {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  padding-bottom: 22px;
+
+  border-bottom: 1px solid
+    rgba(255, 255, 255, 0.08);
+
+  color: #65666c;
+
+  font-size: 9px;
+  font-weight: 600;
+
+  letter-spacing: 0.15em;
+}
+
+.process-intro-main {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.25fr)
+    minmax(260px, 0.75fr);
+
+  align-items: end;
+
+  gap: 80px;
+
+  padding-top: 60px;
+}
+
+.process-intro-main h1 {
+  margin: 0;
+
+  font-size: clamp(
+    4rem,
+    7vw,
+    7rem
+  );
+
+  font-weight: 500;
+
+  line-height: 0.88;
+
+  letter-spacing: -0.065em;
+}
+
+.process-intro-main h1 span {
+  display: block;
+
+  color: #a45e79;
+}
+
+.process-intro-main p {
+  max-width: 360px;
+
+  margin: 0;
+
+  color: #85878d;
+
+  font-size: 14px;
+
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   PROCESS LIST
+========================================================= */
+
+.process-list {
+  padding: 40px 0 100px;
+}
+
+.process-list .process-container {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 18px;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.process-card {
+  --mouse-x: 50%;
+  --mouse-y: 50%;
+
+  position: relative;
+
+  min-height: 270px;
+
+  padding: 30px 34px;
+
+  overflow: hidden;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.09);
+
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.045),
+      rgba(255, 255, 255, 0.012)
+    );
+
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.2);
+
+  transform-style: preserve-3d;
+
+  transition:
+    transform 0.5s
+      cubic-bezier(.2, .7, .2, 1),
+    border-color 0.4s ease,
+    box-shadow 0.4s ease;
+
+  will-change: transform;
+}
+
+
+/* cursor spotlight */
+
+.process-card::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      280px circle at var(--mouse-x) var(--mouse-y),
+      rgba(164, 94, 121, 0.15),
+      transparent 65%
+    );
+
+  opacity: 0;
+
+  transition: opacity 0.35s ease;
+}
+
+.process-card:hover::before {
+  opacity: 1;
+}
+
+
+/* blue secondary glow */
+
+.process-card::after {
+  content: "";
+
+  position: absolute;
+
+  width: 260px;
+  height: 260px;
+
+  right: -130px;
+  bottom: -160px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(72, 96, 145, 0.13),
+      transparent 70%
+    );
+
+  pointer-events: none;
+}
+
+
+/* hover */
+
+.process-card:hover {
+  transform:
+    translateY(-5px)
+    rotateX(1deg);
+
+  border-color:
+    rgba(164, 94, 121, 0.28);
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.3),
+    0 0 45px rgba(121, 55, 83, 0.08);
+}
+
+
+/* =========================================================
+   CARD TOP
+========================================================= */
+
+.process-card-top {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+}
+
+.process-number {
+  color: #a45e79;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  letter-spacing: 0.12em;
+}
+
+.process-tag {
+  color: #5d5f65;
+
+  font-size: 8px;
+  font-weight: 600;
+
+  letter-spacing: 0.15em;
+
+  text-align: right;
+}
+
+
+/* =========================================================
+   CARD CONTENT
+========================================================= */
+
+.process-card-content {
+  position: relative;
+  z-index: 2;
+
+  max-width: 720px;
+
+  margin-top: 75px;
+}
+
+.process-card-content h2 {
+  margin: 0;
+
+  font-size: clamp(
+    2.5rem,
+    5vw,
+    5rem
+  );
+
+  font-weight: 500;
+
+  line-height: 0.9;
+
+  letter-spacing: -0.06em;
+}
+
+.process-card-content p {
+  max-width: 470px;
+
+  margin: 24px 0 0;
+
+  color: #85878d;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   DECORATIVE CORNER
+========================================================= */
+
+.process-card-corner {
+  position: absolute;
+
+  right: 32px;
+  bottom: 30px;
+
+  width: 42px;
+  height: 42px;
+
+  border-right: 1px solid
+    rgba(164, 94, 121, 0.35);
+
+  border-bottom: 1px solid
+    rgba(164, 94, 121, 0.35);
+
+  opacity: 0.7;
+
+  transition:
+    width 0.5s ease,
+    height 0.5s ease;
+}
+
+.process-card-corner span {
+  position: absolute;
+
+  right: -1px;
+  bottom: -1px;
+
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: #a45e79;
+
+  box-shadow:
+    0 0 15px rgba(164, 94, 121, 0.7);
+}
+
+.process-card:hover
+.process-card-corner {
+  width: 58px;
+  height: 58px;
+}
+
+
+/* =========================================================
+   CLOSING
+========================================================= */
+
+.process-closing {
+  padding: 40px 0 150px;
+}
+
+.process-closing-line {
+  width: 100%;
+  height: 1px;
+
+  margin-bottom: 50px;
+
+  background:
+    rgba(255, 255, 255, 0.08);
+}
+
+.process-closing-label {
+  color: #55575c;
+
+  font-size: 8px;
+  font-weight: 600;
+
+  letter-spacing: 0.15em;
+}
+
+.process-closing h2 {
+  max-width: 850px;
+
+  margin: 25px 0 0;
+
+  font-size: clamp(
+    3rem,
+    6vw,
+    6rem
+  );
+
+  font-weight: 500;
+
+  line-height: 0.9;
+
+  letter-spacing: -0.06em;
+}
+
+.process-closing h2 span {
+  display: block;
+
+  color: #a45e79;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+
+  .process-container {
+    width: calc(100% - 50px);
+  }
+
+  .process-intro-section {
+    padding: 125px 0 70px;
+  }
+
+  .process-intro-main {
+    grid-template-columns:
+      minmax(0, 1.15fr)
+      minmax(220px, 0.85fr);
+
+    gap: 45px;
+  }
+
+  .process-card {
+    min-height: 250px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+  .process-container {
+    width: calc(100% - 32px);
+  }
+
+  .process-intro-section {
+    padding: 100px 0 55px;
+  }
+
+  .process-intro-top {
+    font-size: 7px;
+  }
+
+  .process-intro-main {
+    display: block;
+
+    padding-top: 38px;
+  }
+
+  .process-intro-main h1 {
+    font-size: clamp(
+      3rem,
+      13vw,
+      4.4rem
+    );
+  }
+
+  .process-intro-main p {
+    margin-top: 25px;
+
+    font-size: 13px;
+  }
+
+
+  /* cards */
+
+  .process-list {
+    padding: 20px 0 70px;
+  }
+
+  .process-list .process-container {
+    gap: 14px;
+  }
+
+  .process-card {
+    min-height: 260px;
+
+    padding: 23px 22px;
+
+    border-radius: 14px;
+  }
+
+  .process-card-content {
+    margin-top: 70px;
+  }
+
+  .process-card-content h2 {
+    font-size: clamp(
+      2.5rem,
+      12vw,
+      4rem
+    );
+  }
+
+  .process-card-content p {
+    max-width: 330px;
+
+    margin-top: 18px;
+
+    font-size: 12.5px;
+  }
+
+  .process-tag {
+    max-width: 120px;
+
+    font-size: 6px;
+
+    line-height: 1.4;
+  }
+
+  .process-card-corner {
+    right: 22px;
+    bottom: 22px;
+  }
+
+  /* Closing */
+
+  .process-closing {
+    padding: 30px 0 90px;
+  }
+
+  .process-closing-line {
+    margin-bottom: 35px;
+  }
+
+  .process-closing h2 {
+    font-size: clamp(
+      2.8rem,
+      12vw,
+      4rem
+    );
+  }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .process-container {
+    width: calc(100% - 24px);
+  }
+
+  .process-card {
+    min-height: 250px;
+
+    padding: 21px 19px;
+  }
+
+  .process-card-content {
+    margin-top: 62px;
+  }
+
+  .process-card-content h2 {
+    font-size: 2.5rem;
+  }
+
+  .process-card-content p {
+    font-size: 12px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .process-card {
+    transition: none;
+  }
+}

@@ -1,0 +1,754 @@
+.why-ez {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
+  padding: 11rem 0 10rem;
+
+  background: #080809;
+
+  overflow: hidden;
+
+  isolation: isolate;
+}
+
+
+/* =========================================
+   AMBIENT GLOWS
+========================================= */
+
+.why-glow {
+  position: absolute;
+
+  width: 650px;
+  height: 650px;
+
+  border-radius: 50%;
+
+  filter: blur(120px);
+
+  pointer-events: none;
+
+  z-index: -1;
+
+  animation: why-breathe 8s ease-in-out infinite;
+}
+
+.why-glow-burgundy {
+  left: -350px;
+  top: 20%;
+
+  background: rgba(126, 42, 68, 0.14);
+}
+
+.why-glow-blue {
+  right: -350px;
+  top: 45%;
+
+  background: rgba(48, 79, 103, 0.15);
+
+  animation-delay: -4s;
+}
+
+@keyframes why-breathe {
+  0%,
+  100% {
+    transform: scale(0.92);
+    opacity: 0.65;
+  }
+
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+}
+
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.why-container {
+  position: relative;
+
+  width: min(
+    1180px,
+    calc(100% - 3rem)
+  );
+
+  margin: 0 auto;
+}
+
+
+/* =========================================
+   TOP
+========================================= */
+
+.why-top {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 5rem;
+}
+
+.why-eyebrow,
+.why-index {
+  color: #95566f;
+
+  font-size: 0.62rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.19em;
+
+  text-transform: uppercase;
+}
+
+.why-index {
+  color: #55575c;
+}
+
+
+/* =========================================
+   TITLE
+========================================= */
+
+.why-title {
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 1100px;
+
+  margin-bottom: 6.5rem;
+}
+
+.why-title-line-wrap {
+  display: block;
+
+  overflow: hidden;
+}
+
+.why-title-line {
+  display: block;
+
+  color: #efebee;
+
+  font-size: clamp(
+    3.6rem,
+    7.2vw,
+    8rem
+  );
+
+  font-weight: 500;
+
+  line-height: 0.87;
+
+  letter-spacing: -0.07em;
+}
+
+.why-title-line em {
+  color: #777980;
+
+  font-style: normal;
+}
+
+.why-title-accent {
+  color: #a45e79;
+}
+
+
+/* =========================================
+   SPECIALISTS
+========================================= */
+
+.why-specialists {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 7rem;
+
+  z-index: 3;
+}
+
+.why-specialist {
+  display: grid;
+
+  grid-template-columns:
+    40px
+    1fr
+    auto;
+
+  gap: 1.2rem;
+
+  align-items: start;
+
+  padding-top: 1.4rem;
+
+  border-top: 1px solid
+    rgba(255, 255, 255, 0.09);
+}
+
+.why-specialist-left {
+  border-top-color:
+    rgba(155, 78, 106, 0.4);
+}
+
+.why-specialist-right {
+  border-top-color:
+    rgba(66, 102, 128, 0.45);
+}
+
+.why-specialist-number {
+  padding-top: 0.25rem;
+
+  color: #9c5a73;
+
+  font-size: 0.62rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.12em;
+}
+
+.why-specialist-right
+.why-specialist-number {
+  color: #607e96;
+}
+
+.why-specialist-role {
+  display: block;
+
+  margin-bottom: 0.8rem;
+
+  color: #66686e;
+
+  font-size: 0.53rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.16em;
+}
+
+.why-specialist-info h3 {
+  margin: 0 0 0.9rem;
+
+  color: #e9e5e8;
+
+  font-size: clamp(
+    1.7rem,
+    3vw,
+    3rem
+  );
+
+  font-weight: 500;
+
+  line-height: 0.95;
+
+  letter-spacing: -0.055em;
+}
+
+.why-specialist-right
+.why-specialist-info h3 {
+  color: #dce4e9;
+}
+
+.why-specialist-info p {
+  max-width: 370px;
+
+  margin: 0;
+
+  color: #85878d;
+
+  font-size: 0.76rem;
+
+  line-height: 1.8;
+}
+
+.why-specialist-color {
+  padding-top: 0.25rem;
+
+  color: #74455a;
+
+  font-size: 0.45rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.15em;
+}
+
+.why-specialist-right
+.why-specialist-color {
+  color: #527087;
+}
+
+
+/* =========================================
+   SVG SYSTEM
+========================================= */
+
+.why-svg-wrap {
+  position: relative;
+
+  width: 100%;
+
+  height: 260px;
+
+  margin-top: -20px;
+
+  z-index: 1;
+
+  pointer-events: none;
+}
+
+.why-svg {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: visible;
+}
+
+.why-path {
+  fill: none;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+}
+
+/* PRIMARY BURGUNDY */
+.why-path-burgundy {
+  stroke: rgba(157, 76, 106, 0.82);
+  stroke-width: 2.2;
+  stroke-dasharray: 900;
+  stroke-dashoffset: 900;
+}
+
+/* PRIMARY BLUE */
+.why-path-blue {
+  stroke: rgba(91, 125, 149, 0.88);
+  stroke-width: 2.2;
+  stroke-dasharray: 900;
+  stroke-dashoffset: 900;
+}
+
+/* SECONDARY BURGUNDY */
+.why-path-burgundy-soft {
+  stroke: rgba(157, 76, 106, 0.38);
+  stroke-width: 1.4;
+  stroke-dasharray: 900;
+  stroke-dashoffset: 900;
+}
+
+/* SECONDARY BLUE */
+.why-path-blue-soft {
+  stroke: rgba(91, 125, 149, 0.42);
+  stroke-width: 1.4;
+  stroke-dasharray: 900;
+  stroke-dashoffset: 900;
+}
+
+@keyframes draw-path {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.why-svg-dot {
+  fill: #b2758d;
+
+  opacity: 0;
+
+  animation:
+    intersection-appear
+    0.8s
+    2.8s
+    forwards;
+}
+
+@keyframes intersection-appear {
+  to {
+    opacity: 0.9;
+  }
+}
+
+.why-svg-label {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  transform:
+    translate(-50%, -50%);
+
+  padding: 0.65rem 1rem;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.08);
+
+  background:
+    rgba(8, 8, 9, 0.72);
+
+  backdrop-filter: blur(10px);
+
+  white-space: nowrap;
+}
+
+.why-svg-label span {
+  color: #b5adb2;
+
+  font-size: 0.48rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.18em;
+}
+
+
+/* =========================================
+   BOTTOM
+========================================= */
+
+.why-bottom {
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    auto;
+
+  gap: 5rem;
+
+  align-items: end;
+
+  padding-top: 2rem;
+
+  border-top: 1px solid
+    rgba(255, 255, 255, 0.07);
+}
+
+.why-bottom-copy {
+  max-width: 580px;
+}
+
+.why-bottom-eyebrow {
+  display: block;
+
+  margin-bottom: 1rem;
+
+  color: #95566f;
+
+  font-size: 0.55rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.17em;
+}
+
+.why-bottom-copy p {
+  margin: 0;
+
+  color: #8a8c92;
+
+  font-size: clamp(
+    1.2rem,
+    2vw,
+    1.7rem
+  );
+
+  line-height: 1.3;
+
+  letter-spacing: -0.025em;
+}
+
+.why-bottom-statement {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-end;
+
+  gap: 0.25rem;
+
+  color: #66686e;
+
+  font-size: 0.55rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.16em;
+
+  text-align: right;
+}
+
+.why-bottom-statement span:last-child {
+  color: #a45e79;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 950px) {
+
+  .why-ez {
+    padding: 9rem 0;
+  }
+
+  .why-title-line {
+    font-size: clamp(
+      3.4rem,
+      8.5vw,
+      6.5rem
+    );
+  }
+
+  .why-specialists {
+    gap: 3rem;
+  }
+
+  .why-specialist {
+    grid-template-columns:
+      32px
+      1fr;
+  }
+
+  .why-specialist-color {
+    display: none;
+  }
+
+  .why-svg-wrap {
+    height: 220px;
+  }
+
+  .why-bottom {
+    grid-template-columns: 1fr;
+
+    gap: 2rem;
+  }
+
+  .why-bottom-statement {
+    align-items: flex-start;
+
+    text-align: left;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+
+  .why-ez {
+    min-height: auto;
+
+    padding: 7rem 0;
+  }
+
+  .why-container {
+    width: min(
+      calc(100% - 2rem),
+      500px
+    );
+  }
+
+  .why-top {
+    margin-bottom: 3.5rem;
+  }
+
+  .why-eyebrow,
+  .why-index {
+    font-size: 0.5rem;
+
+    letter-spacing: 0.13em;
+  }
+
+  .why-title {
+    margin-bottom: 4rem;
+  }
+
+  .why-title-line {
+    font-size: clamp(
+      2.65rem,
+      12.5vw,
+      4.5rem
+    );
+
+    line-height: 0.92;
+
+    letter-spacing: -0.065em;
+  }
+
+  .why-specialists {
+    grid-template-columns: 1fr;
+
+    gap: 2.8rem;
+  }
+
+  .why-specialist {
+    grid-template-columns:
+      30px
+      1fr;
+
+    gap: 0.9rem;
+  }
+
+  .why-specialist-info h3 {
+    font-size: 2rem;
+  }
+
+  .why-specialist-info p {
+    max-width: 320px;
+
+    font-size: 0.74rem;
+
+    line-height: 1.75;
+  }
+
+  /* ---------------------------------------
+     MOBILE SVG
+  --------------------------------------- */
+
+  .why-svg-wrap {
+    height: 210px;
+
+    margin-top: 0;
+
+    margin-bottom: 1rem;
+  }
+
+  .why-svg {
+    width: 100%;
+
+    height: 100%;
+  }
+
+  .why-path-burgundy,
+  .why-path-blue {
+    stroke-width: 1.1;
+  }
+
+  .why-path-burgundy-soft,
+  .why-path-blue-soft {
+    stroke-width: 0.7;
+  }
+
+  .why-svg-label {
+    padding: 0.55rem 0.75rem;
+  }
+
+  .why-svg-label span {
+    font-size: 0.42rem;
+
+    letter-spacing: 0.14em;
+  }
+
+  /* ---------------------------------------
+     BOTTOM
+  --------------------------------------- */
+
+  .why-bottom {
+    padding-top: 1.7rem;
+
+    gap: 2.5rem;
+  }
+
+  .why-bottom-copy p {
+    font-size: 1.15rem;
+
+    line-height: 1.4;
+  }
+
+  .why-bottom-statement {
+    align-items: flex-start;
+
+    font-size: 0.48rem;
+
+    text-align: left;
+  }
+
+  /* ---------------------------------------
+     GLOWS
+  --------------------------------------- */
+
+  .why-glow {
+    width: 350px;
+    height: 350px;
+
+    filter: blur(80px);
+  }
+
+  .why-glow-burgundy {
+    left: -230px;
+  }
+
+  .why-glow-blue {
+    right: -230px;
+  }
+}
+
+
+/* =========================================
+   SMALL PHONES
+========================================= */
+
+@media (max-width: 380px) {
+
+  .why-title-line {
+    font-size: 2.45rem;
+  }
+
+  .why-specialist-info h3 {
+    font-size: 1.75rem;
+  }
+
+  .why-specialist-info p {
+    font-size: 0.7rem;
+  }
+
+  .why-svg-wrap {
+    height: 180px;
+  }
+
+  .why-svg-label {
+    padding: 0.45rem 0.6rem;
+  }
+
+  .why-svg-label span {
+    font-size: 0.38rem;
+  }
+
+  .why-bottom-copy p {
+    font-size: 1.05rem;
+  }
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .why-glow,
+  .why-path,
+  .why-svg-dot {
+    animation: none;
+  }
+
+  .why-path {
+    stroke-dashoffset: 0;
+  }
+
+  .why-svg-dot {
+    opacity: 0.9;
+  }
+}

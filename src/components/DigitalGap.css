@@ -1,0 +1,465 @@
+.digital-gap {
+  position: relative;
+
+  width: 100%;
+
+  padding: 9rem 0 10rem;
+
+  background:
+    radial-gradient(
+      circle at 20% 40%,
+      rgba(113, 36, 63, 0.08),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 80% 65%,
+      rgba(42, 74, 103, 0.08),
+      transparent 32%
+    ),
+    #09090a;
+
+  overflow: hidden;
+}
+
+.digital-gap-container {
+  width: min(1180px, calc(100% - 3rem));
+
+  margin: 0 auto;
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.digital-gap-heading {
+  max-width: 850px;
+
+  margin-bottom: 5rem;
+}
+
+.digital-gap-eyebrow,
+.shift-eyebrow {
+  display: block;
+
+  margin-bottom: 1.25rem;
+
+  color: #8e5267;
+
+  font-size: 0.68rem;
+  font-weight: 600;
+
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.digital-gap-title {
+  margin: 0;
+
+  color: #f5f3f4;
+
+  font-size: clamp(3rem, 6vw, 6.5rem);
+  font-weight: 500;
+
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+}
+
+.digital-gap-title span {
+  color: #85888f;
+}
+
+.digital-gap-intro {
+  max-width: 650px;
+
+  margin: 2rem 0 0;
+
+  color: #999ba1;
+
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+
+/* =========================================
+   CARDS
+========================================= */
+
+.digital-gap-cards {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 1rem;
+
+  perspective: 1200px;
+}
+
+.digital-gap-card {
+  --mouse-x: 50%;
+  --mouse-y: 50%;
+
+  position: relative;
+
+  min-height: 390px;
+
+  padding: 1.7rem;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-between;
+
+  border: 1px solid rgba(255, 255, 255, 0.075);
+
+  border-radius: 1.25rem;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.045),
+      rgba(255, 255, 255, 0.012)
+    );
+
+  overflow: hidden;
+
+  transform-style: preserve-3d;
+
+  transition:
+    border-color 0.4s ease,
+    background 0.4s ease;
+}
+
+
+/* Cursor-following light */
+
+.digital-gap-card::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      240px circle at var(--mouse-x) var(--mouse-y),
+      rgba(132, 48, 77, 0.22),
+      transparent 65%
+    );
+
+  opacity: 0;
+
+  transition: opacity 0.35s ease;
+}
+
+
+/* Blue secondary glow */
+
+.digital-gap-card::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      180px circle at
+      calc(var(--mouse-x) + 35px)
+      calc(var(--mouse-y) - 30px),
+      rgba(62, 104, 137, 0.13),
+      transparent 65%
+    );
+
+  opacity: 0;
+
+  transition: opacity 0.35s ease;
+}
+
+.digital-gap-card:hover {
+  border-color: rgba(154, 83, 108, 0.35);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.055),
+      rgba(255, 255, 255, 0.018)
+    );
+}
+
+.digital-gap-card:hover::before,
+.digital-gap-card:hover::after {
+  opacity: 1;
+}
+
+
+/* =========================================
+   CARD CONTENT
+========================================= */
+
+.card-top {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-number {
+  color: #777980;
+
+  font-size: 0.75rem;
+  font-weight: 500;
+
+  letter-spacing: 0.14em;
+}
+
+.card-arrow {
+  color: #707278;
+
+  font-size: 1.1rem;
+
+  transition:
+    color 0.35s ease,
+    transform 0.35s ease;
+}
+
+.digital-gap-card:hover .card-arrow {
+  color: #b97891;
+
+  transform: translate(3px, -3px);
+}
+
+.card-content {
+  position: relative;
+  z-index: 2;
+
+  transform: translateZ(25px);
+}
+
+.card-content h3 {
+  max-width: 280px;
+
+  margin: 0 0 1.25rem;
+
+  color: #efedef;
+
+  font-size: clamp(1.45rem, 2vw, 2rem);
+  font-weight: 500;
+
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+}
+
+.card-content p {
+  max-width: 300px;
+
+  margin: 0;
+
+  color: #8d8f96;
+
+  font-size: 0.9rem;
+
+  line-height: 1.7;
+}
+
+.card-line {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(139, 67, 91, 0.5),
+      rgba(65, 94, 118, 0.2),
+      transparent
+    );
+
+  transform-origin: left;
+
+  transition: transform 0.5s ease;
+}
+
+.digital-gap-card:hover .card-line {
+  transform: scaleX(0.7);
+}
+
+
+/* =========================================
+   SHIFT
+========================================= */
+
+.digital-gap-shift {
+  display: grid;
+
+  grid-template-columns: 100px 1fr;
+
+  gap: 2rem;
+
+  max-width: 850px;
+
+  margin: 8rem 0 0 auto;
+}
+
+.shift-line {
+  width: 100%;
+  height: 1px;
+
+  margin-top: 0.5rem;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(143, 67, 93, 0.8),
+      transparent
+    );
+}
+
+.digital-gap-shift h3 {
+  margin: 0;
+
+  color: #f2eff1;
+
+  font-size: clamp(2rem, 4vw, 4rem);
+  font-weight: 500;
+
+  line-height: 1;
+
+  letter-spacing: -0.045em;
+}
+
+.digital-gap-shift p {
+  max-width: 600px;
+
+  margin: 1.5rem 0 0;
+
+  color: #92949a;
+
+  font-size: 0.95rem;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 850px) {
+
+  .digital-gap {
+    padding: 7rem 0 8rem;
+  }
+
+  .digital-gap-cards {
+    grid-template-columns: 1fr;
+
+    gap: 1rem;
+  }
+
+  .digital-gap-card {
+    min-height: 300px;
+  }
+
+  .digital-gap-shift {
+    margin-top: 6rem;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .digital-gap {
+    padding: 6rem 0 7rem;
+  }
+
+  .digital-gap-container {
+    width: min(
+      100% - 2rem,
+      500px
+    );
+  }
+
+  .digital-gap-heading {
+    margin-bottom: 3rem;
+  }
+
+  .digital-gap-title {
+    font-size: clamp(
+      2.65rem,
+      12vw,
+      4rem
+    );
+  }
+
+  .digital-gap-intro {
+    font-size: 0.9rem;
+  }
+
+  .digital-gap-card {
+    min-height: 300px;
+
+    padding: 1.4rem;
+
+    border-radius: 1rem;
+  }
+
+  /*
+     Disable 3D tilt on touch devices.
+     The glow remains available.
+  */
+
+  .digital-gap-card {
+    transform: none !important;
+  }
+
+  .digital-gap-card::before,
+  .digital-gap-card::after {
+    opacity: 0.45;
+  }
+
+  .digital-gap-shift {
+    grid-template-columns: 1fr;
+
+    gap: 1rem;
+
+    margin-top: 5rem;
+  }
+
+  .shift-line {
+    width: 50px;
+  }
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .digital-gap-card {
+    transform: none !important;
+
+    transition: none;
+  }
+
+  .digital-gap-card::before,
+  .digital-gap-card::after {
+    transition: none;
+  }
+}

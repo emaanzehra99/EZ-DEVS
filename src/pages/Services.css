@@ -1,0 +1,2321 @@
+/* =========================================
+   SERVICES PAGE
+========================================= */
+
+.services-page {
+  width: 100%;
+  min-height: 100%;
+  background: #080809;
+  color: #eee9ec;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.services-hero {
+  position: relative;
+
+  min-height: 100vh;
+  min-height: 100svh;
+
+  display: flex;
+  align-items: center;
+
+  padding: 8rem 0 4rem;
+
+  overflow: hidden;
+
+  isolation: isolate;
+}
+
+
+/* =========================================
+   AMBIENT LIGHT
+========================================= */
+
+.services-ambient {
+  position: absolute;
+
+  width: 650px;
+  height: 650px;
+
+  border-radius: 50%;
+
+  filter: blur(140px);
+
+  pointer-events: none;
+
+  z-index: -2;
+}
+
+.services-ambient-burgundy {
+  left: -430px;
+  top: 20%;
+
+  background:
+    rgba(126, 42, 68, 0.16);
+}
+
+.services-ambient-blue {
+  right: -440px;
+  bottom: -30%;
+
+  background:
+    rgba(48, 79, 103, 0.13);
+
+  animation:
+    servicesAmbientBreathe
+    8s ease-in-out infinite;
+}
+
+@keyframes servicesAmbientBreathe {
+
+  0%,
+  100% {
+    transform: scale(0.94);
+    opacity: 0.7;
+  }
+
+  50% {
+    transform: scale(1.08);
+    opacity: 1;
+  }
+}
+
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.services-hero-container {
+  position: relative;
+
+  width: min(
+    1180px,
+    calc(100% - 3rem)
+  );
+
+  min-height:
+    calc(100vh - 12rem);
+
+  min-height:
+    calc(100svh - 12rem);
+
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* =========================================
+   EYEBROW
+========================================= */
+
+.services-eyebrow {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  padding-bottom: 1.6rem;
+
+  border-bottom:
+    1px solid
+    rgba(255, 255, 255, 0.08);
+
+  color: #73757b;
+
+  font-size: 0.56rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.18em;
+
+  text-transform: uppercase;
+}
+
+.services-eyebrow span:first-child {
+  color: #a45e79;
+}
+
+
+/* =========================================
+   STATEMENT
+========================================= */
+
+.services-statement {
+  position: relative;
+
+  flex: 1;
+
+  padding-top: 4.5rem;
+}
+
+
+/* =========================================
+   TITLE
+========================================= */
+
+.services-title {
+  position: relative;
+
+  z-index: 5;
+
+  width: 100%;
+
+  pointer-events: none;
+}
+
+.services-title-mask {
+  overflow: hidden;
+}
+
+.services-title-line {
+  margin: 0;
+
+  color: #eee9ec;
+
+  font-size: clamp(
+    4.2rem,
+    8.2vw,
+    8.8rem
+  );
+
+  font-weight: 500;
+
+  line-height: 0.86;
+
+  letter-spacing: -0.077em;
+}
+
+.services-title-muted {
+  color: #777980;
+}
+
+
+/* =========================================
+   CINEMATIC IMAGE WINDOW
+========================================= */
+
+.services-image-window {
+  position: relative;
+
+  z-index: 3;
+
+  width: min(
+    48vw,
+    555px
+  );
+
+  height: min(
+    49vh,
+    590px
+  );
+
+  min-height: 420px;
+
+  margin: 3.5rem auto 0;
+
+  perspective: 1200px;
+
+  pointer-events: auto;
+}
+
+
+/* =========================================
+   IMAGE GLOW
+========================================= */
+
+.services-image-glow {
+  position: absolute;
+
+  inset: -16%;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      ellipse at 25% 45%,
+      rgba(157, 76, 106, 0.34),
+      transparent 48%
+    ),
+    radial-gradient(
+      ellipse at 78% 58%,
+      rgba(91, 125, 149, 0.3),
+      transparent 48%
+    );
+
+  filter: blur(55px);
+
+  pointer-events: none;
+
+  z-index: -1;
+}
+
+
+/* =========================================
+   REVEAL IMAGE
+========================================= */
+
+.services-reveal-image {
+  position: relative;
+  border-radius: 8px;
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+
+  transform-style: preserve-3d;
+
+  will-change:
+    transform,
+    clip-path,
+    opacity;
+
+  box-shadow:
+    0 45px 110px
+    rgba(0, 0, 0, 0.5);
+
+  border-radius: 3px;
+}
+
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.services-team-image {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  object-position: center;
+
+  transform:
+    scale(1.01);
+
+  filter:
+    saturate(0.88)
+    contrast(1.06);
+}
+
+
+/* =========================================
+   IMAGE SHADE
+========================================= */
+
+.services-image-shade {
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(8, 8, 9, 0.05),
+      transparent 32%,
+      rgba(8, 8, 9, 0.22)
+    ),
+    linear-gradient(
+      90deg,
+      rgba(126, 42, 68, 0.13),
+      transparent 35%,
+      transparent 65%,
+      rgba(48, 79, 103, 0.14)
+    );
+
+  mix-blend-mode: screen;
+}
+
+
+/* =========================================
+   LIGHT TRAILS
+========================================= */
+
+.services-light-trail {
+  position: absolute;
+
+  height: 2px;
+
+  pointer-events: none;
+
+  z-index: 4;
+
+  transform-origin: left center;
+
+  filter:
+    drop-shadow(
+      0 0 8px currentColor
+    );
+}
+
+.services-light-trail-burgundy {
+  left: -1px;
+  top: 18%;
+
+  width: 42%;
+
+  color: #9d4c6a;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #9d4c6a
+    );
+}
+
+.services-light-trail-blue {
+  right: -1px;
+  bottom: 21%;
+
+  width: 38%;
+
+  transform-origin: right center;
+
+  color: #5b7d95;
+
+  background:
+    linear-gradient(
+      90deg,
+      #5b7d95,
+      transparent
+    );
+}
+
+
+/* =========================================
+   BOTTOM STATEMENT
+========================================= */
+
+.services-bottom-statement {
+  position: relative;
+
+  z-index: 6;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 1.4rem;
+
+  width: min(
+    470px,
+    100%
+  );
+
+  margin:
+    -1.2rem
+    0
+    0
+    clamp(
+      1rem,
+      13vw,
+      10rem
+    );
+}
+
+.services-bottom-line {
+  flex: 0 0 32px;
+
+  width: 32px;
+  height: 1px;
+
+  margin-top: 0.75rem;
+
+  background:
+    linear-gradient(
+      90deg,
+      #a45e79,
+      #5b7d95
+    );
+}
+
+.services-hero-copy {
+  margin: 0;
+
+  color: #85878d;
+
+  font-size: clamp(
+    1rem,
+    1.45vw,
+    1.18rem
+  );
+
+  line-height: 1.6;
+
+  letter-spacing: -0.02em;
+}
+
+.services-hero-copy strong {
+  color: #ded9dc;
+
+  font-weight: 500;
+}
+
+
+/* =========================================
+   SCROLL
+========================================= */
+
+.services-scroll {
+  display: flex;
+
+  align-items: center;
+
+  gap: 1rem;
+
+  margin-top: 2.5rem;
+
+  color: #55575c;
+
+  font-size: 0.5rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.18em;
+
+  text-transform: uppercase;
+}
+
+.services-scroll-line {
+  width: 65px;
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #a45e79,
+      transparent
+    );
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 950px) {
+
+  .services-hero {
+    padding-top: 7rem;
+  }
+
+  .services-title-line {
+    font-size:
+      clamp(
+        3.6rem,
+        9vw,
+        7rem
+      );
+  }
+
+  .services-image-window {
+    width: min(
+      58vw,
+      500px
+    );
+
+    height: 460px;
+
+    min-height: 360px;
+
+    margin-top: -1rem;
+  }
+
+  .services-bottom-statement {
+    margin-left: 7vw;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+
+  .services-hero {
+    min-height: auto;
+
+    padding:
+      6.5rem
+      0
+      3.5rem;
+  }
+
+  .services-hero-container {
+    width:
+      min(
+        calc(100% - 2rem),
+        500px
+      );
+
+    min-height: auto;
+  }
+
+  .services-eyebrow {
+    padding-bottom: 1.3rem;
+
+    font-size: 0.46rem;
+
+    letter-spacing: 0.12em;
+  }
+
+  .services-eyebrow span:last-child {
+    display: none;
+  }
+
+
+  /* STATEMENT */
+
+  .services-statement {
+    padding-top: 3.2rem;
+  }
+
+
+  /* TITLE */
+
+  .services-title-line {
+    font-size:
+      clamp(
+        2.7rem,
+        12.7vw,
+        4.5rem
+      );
+
+    line-height: 0.9;
+
+    letter-spacing: -0.07em;
+  }
+
+
+  /* IMAGE */
+
+  .services-image-window {
+    width: 100%;
+
+    height:
+      min(
+        92vw,
+        480px
+      );
+
+    min-height: 330px;
+
+    margin:
+      2.7rem
+      auto
+      0;
+  }
+
+  .services-team-image {
+    object-position: center;
+  }
+
+  .services-image-glow {
+    inset: -20%;
+
+    filter: blur(45px);
+  }
+
+  .services-light-trail {
+    height: 1px;
+  }
+
+
+  /* BOTTOM */
+
+  .services-bottom-statement {
+    gap: 1rem;
+
+    width: 100%;
+
+    margin:
+      2.5rem
+      0
+      0;
+  }
+
+  .services-bottom-line {
+    flex-basis: 22px;
+
+    width: 22px;
+
+    margin-top: 0.65rem;
+  }
+
+  .services-hero-copy {
+    font-size: 0.95rem;
+
+    line-height: 1.55;
+  }
+
+
+  /* SCROLL */
+
+  .services-scroll {
+    margin-top: 3rem;
+
+    font-size: 0.43rem;
+  }
+
+  .services-scroll-line {
+    width: 45px;
+  }
+
+
+  /* GLOWS */
+
+  .services-ambient {
+    width: 360px;
+    height: 360px;
+
+    filter: blur(90px);
+  }
+
+  .services-ambient-burgundy {
+    left: -260px;
+  }
+
+  .services-ambient-blue {
+    right: -260px;
+  }
+}
+
+
+/* =========================================
+   SMALL PHONES
+========================================= */
+
+@media (max-width: 380px) {
+
+  .services-title-line {
+    font-size: 2.5rem;
+  }
+
+  .services-image-window {
+    height: 380px;
+
+    min-height: 0;
+
+    margin-top: 2.4rem;
+  }
+
+  .services-bottom-statement {
+    margin-top: 2.2rem;
+  }
+
+  .services-hero-copy {
+    font-size: 0.9rem;
+  }
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .services-ambient-blue,
+  .services-image-glow,
+  .services-reveal-image,
+  .services-light-trail {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* =========================================
+   SERVICES — PINNED STACK EXPERIENCE
+========================================= */
+
+.services-stack-section {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
+  background: #080809;
+
+  overflow: hidden;
+
+  isolation: isolate;
+}
+
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.services-stack-container {
+  position: relative;
+
+  width: min(
+    1180px,
+    calc(100% - 3rem)
+  );
+
+  height: 100vh;
+
+  height: 100svh;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    0.72fr
+    1.28fr;
+
+  align-items: center;
+
+  gap: 5rem;
+}
+
+
+/* =========================================
+   INTRO
+========================================= */
+
+.services-stack-intro {
+  position: relative;
+
+  z-index: 2;
+}
+
+.services-stack-label {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+
+  margin-bottom: 3rem;
+
+  color: #55575c;
+
+  font-size: 0.53rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.16em;
+
+  text-transform: uppercase;
+}
+
+.services-stack-label span:first-child {
+  color: #a45e79;
+}
+
+.services-stack-intro h2 {
+  margin: 0;
+
+  color: #eee9ec;
+
+  font-size: clamp(
+    3.5rem,
+    5.5vw,
+    6.2rem
+  );
+
+  font-weight: 500;
+
+  line-height: 0.88;
+
+  letter-spacing: -0.07em;
+}
+
+.services-stack-intro h2 em {
+  color: #73757b;
+
+  font-style: normal;
+}
+
+.services-stack-intro p {
+  max-width: 350px;
+
+  margin: 2.5rem 0 0;
+
+  color: #777980;
+
+  font-size: 1rem;
+
+  line-height: 1.65;
+
+  letter-spacing: -0.015em;
+}
+
+
+/* =========================================
+   CARD STAGE
+========================================= */
+
+.services-card-stage {
+  position: relative;
+
+  width: 100%;
+
+  height: 650px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  perspective: 1600px;
+}
+
+
+/* =========================================
+   STACK
+========================================= */
+
+.services-card-stack {
+  position: relative;
+
+  width: min(
+    100%,
+    590px
+  );
+
+  height: 560px;
+
+  transform-style: preserve-3d;
+}
+
+
+/* =========================================
+   INDIVIDUAL CARD
+========================================= */
+
+.service-flip-card {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  padding: 2rem 2.2rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  overflow: hidden;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.11);
+
+  border-radius: 8px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(25, 25, 28, 0.98),
+      rgba(11, 11, 13, 0.98)
+    );
+
+  box-shadow:
+    0 40px 90px
+    rgba(0, 0, 0, 0.45);
+
+  transform-origin:
+    50% 15%;
+
+  will-change:
+    transform;
+
+  backface-visibility: hidden;
+}
+
+
+/* =========================================
+   CARD GLOW
+========================================= */
+
+.service-flip-card::before {
+  content: "";
+
+  position: absolute;
+
+  inset: -30%;
+
+  pointer-events: none;
+
+  opacity: 0.4;
+
+  filter: blur(65px);
+}
+
+.service-flip-card-burgundy::before {
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(157, 76, 106, 0.22),
+      transparent 45%
+    );
+}
+
+.service-flip-card-blue::before {
+  background:
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(91, 125, 149, 0.2),
+      transparent 45%
+    );
+}
+
+
+/* =========================================
+   TOP
+========================================= */
+
+.service-card-top {
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+}
+
+.service-card-number {
+  color: #ded9dc;
+
+  font-size: 0.75rem;
+
+  font-weight: 500;
+
+  letter-spacing: 0.08em;
+}
+
+.service-card-category {
+  color: #66686e;
+
+  font-size: 0.5rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.16em;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================
+   MAIN
+========================================= */
+
+.service-card-main {
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  gap: 2rem;
+}
+
+.service-card-main h3 {
+  margin: 0;
+
+  color: #eee9ec;
+
+  font-size: clamp(
+    3rem,
+    5vw,
+    5.2rem
+  );
+
+  font-weight: 500;
+
+  line-height: 0.88;
+
+  letter-spacing: -0.07em;
+}
+
+.service-card-side-mark {
+  flex-shrink: 0;
+
+  color: rgba(
+    164,
+    94,
+    121,
+    0.35
+  );
+
+  font-size: 5rem;
+
+  font-weight: 600;
+
+  line-height: 1;
+
+  letter-spacing: -0.1em;
+}
+
+
+/* =========================================
+   BOTTOM
+========================================= */
+
+.service-card-bottom {
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  gap: 2rem;
+
+  padding-top: 2rem;
+
+  border-top:
+    1px solid
+    rgba(255, 255, 255, 0.08);
+}
+
+.service-card-bottom p {
+  max-width: 390px;
+
+  margin: 0;
+
+  color: #85878d;
+
+  font-size: 0.95rem;
+
+  line-height: 1.6;
+}
+
+.service-card-arrow {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 42px;
+  height: 42px;
+
+  flex-shrink: 0;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.12);
+
+  border-radius: 50%;
+
+  color: #eee9ec;
+
+  font-size: 1rem;
+}
+
+
+/* =========================================
+   CARD EDGE
+========================================= */
+
+.service-card-edge {
+  position: absolute;
+
+  left: 0;
+  top: 0;
+
+  width: 3px;
+  height: 100%;
+
+  opacity: 0.8;
+}
+
+.service-flip-card-burgundy
+.service-card-edge {
+  background:
+    linear-gradient(
+      180deg,
+      transparent,
+      #9d4c6a,
+      transparent
+    );
+}
+
+.service-flip-card-blue
+.service-card-edge {
+  background:
+    linear-gradient(
+      180deg,
+      transparent,
+      #5b7d95,
+      transparent
+    );
+}
+
+
+/* =========================================
+   DESKTOP ATMOSPHERE
+========================================= */
+
+.services-stack-section::before {
+  content: "";
+
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  right: -250px;
+  top: 20%;
+
+  border-radius: 50%;
+
+  background:
+    rgba(126, 42, 68, 0.08);
+
+  filter: blur(120px);
+
+  pointer-events: none;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 950px) {
+
+  .services-stack-container {
+    grid-template-columns:
+      0.65fr
+      1.35fr;
+
+    gap: 2.5rem;
+  }
+
+  .services-stack-intro h2 {
+    font-size:
+      clamp(
+        3rem,
+        6vw,
+        5rem
+      );
+  }
+
+  .services-card-stage {
+    height: 560px;
+  }
+
+  .services-card-stack {
+    height: 500px;
+  }
+
+  .service-flip-card {
+    padding: 1.7rem;
+  }
+
+  .service-card-main h3 {
+    font-size:
+      clamp(
+        2.7rem,
+        5vw,
+        4.3rem
+      );
+  }
+
+  .service-card-side-mark {
+    font-size: 4rem;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+  .services-stack-section {
+    min-height: 100svh;
+  }
+
+  .services-stack-container {
+    width:
+      min(
+        calc(100% - 2rem),
+        500px
+      );
+
+    height: 100svh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    gap: 2rem;
+  }
+
+  .services-stack-intro {
+    width: 100%;
+  }
+
+  .services-stack-label {
+    margin-bottom: 1.5rem;
+  }
+
+  .services-stack-label span:last-child {
+    display: none;
+  }
+
+  .services-stack-intro h2 {
+    font-size:
+      clamp(
+        2.7rem,
+        12vw,
+        4.2rem
+      );
+  }
+
+  .services-stack-intro p {
+    display: none;
+  }
+
+
+  /* CARD STAGE */
+
+  .services-card-stage {
+    width: 100%;
+
+    height: 57vh;
+
+    min-height: 390px;
+    max-height: 500px;
+  }
+
+  .services-card-stack {
+    width: 100%;
+
+    height: 100%;
+  }
+
+
+  /* CARD */
+
+  .service-flip-card {
+    padding:
+      1.35rem;
+
+    border-radius: 7px;
+  }
+
+  .service-card-number {
+    font-size: 0.65rem;
+  }
+
+  .service-card-category {
+    font-size: 0.43rem;
+  }
+
+  .service-card-main {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 1rem;
+  }
+
+  .service-card-main h3 {
+    font-size:
+      clamp(
+        2.45rem,
+        11vw,
+        4rem
+      );
+
+    line-height: 0.9;
+  }
+
+  .service-card-side-mark {
+    position: absolute;
+
+    right: 0;
+    bottom: 0;
+
+    font-size: 3.5rem;
+
+    opacity: 0.5;
+  }
+
+  .service-card-bottom {
+    gap: 1rem;
+  }
+
+  .service-card-bottom p {
+    font-size: 0.82rem;
+
+    line-height: 1.5;
+  }
+
+  .service-card-arrow {
+    width: 36px;
+    height: 36px;
+
+    font-size: 0.85rem;
+  }
+}
+
+
+/* =========================================
+   SMALL PHONES
+========================================= */
+
+@media (max-width: 380px) {
+
+  .services-stack-container {
+    gap: 1.4rem;
+  }
+
+  .services-stack-intro h2 {
+    font-size: 2.5rem;
+  }
+
+  .services-card-stage {
+    height: 54vh;
+
+    min-height: 360px;
+  }
+
+  .service-flip-card {
+    padding: 1.15rem;
+  }
+
+  .service-card-main h3 {
+    font-size: 2.25rem;
+  }
+
+  .service-card-bottom p {
+    font-size: 0.76rem;
+  }
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .service-flip-card {
+    transform: none !important;
+  }
+}
+
+/* =========================================
+   SERVICES — ACTUAL WORK / SVG SYSTEM
+========================================= */
+
+.services-offerings {
+  position: relative;
+
+  width: 100%;
+
+  padding:
+    12rem 0
+    10rem;
+
+  background: #080809;
+
+  overflow: hidden;
+
+  isolation: isolate;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.services-offerings-header {
+  width: min(
+    1180px,
+    calc(100% - 3rem)
+  );
+
+  margin: 0 auto 8rem;
+}
+
+.services-offerings-eyebrow {
+  display: flex;
+
+  justify-content: space-between;
+
+  margin-bottom: 4rem;
+
+  color: #55575c;
+
+  font-size: 0.55rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.17em;
+
+  text-transform: uppercase;
+}
+
+.services-offerings-eyebrow span:first-child {
+  color: #a45e79;
+}
+
+.services-offerings-heading {
+  display: grid;
+
+  grid-template-columns:
+    1.4fr
+    0.6fr;
+
+  align-items: end;
+
+  gap: 4rem;
+}
+
+.services-offerings-heading h2 {
+  margin: 0;
+
+  color: #eee9ec;
+
+  font-size: clamp(
+    4rem,
+    8vw,
+    8rem
+  );
+
+  font-weight: 500;
+
+  line-height: 0.84;
+
+  letter-spacing: -0.075em;
+}
+
+.services-offerings-heading h2 em {
+  color: #777980;
+
+  font-style: normal;
+}
+
+.services-offerings-heading p {
+  max-width: 310px;
+
+  margin: 0 0 0.4rem;
+
+  color: #85878d;
+
+  font-size: 1rem;
+
+  line-height: 1.65;
+}
+
+
+/* =========================================
+   LIST
+========================================= */
+
+.services-offerings-list {
+  width: 100%;
+}
+
+.service-offer-row {
+  position: relative;
+
+  width: min(
+    1280px,
+    calc(100% - 3rem)
+  );
+
+  min-height: 360px;
+
+  margin: 0 auto;
+
+  padding:
+    4rem 2rem;
+
+  display: grid;
+
+  grid-template-columns:
+    80px
+    1fr
+    0.8fr;
+
+  align-items: center;
+
+  gap: 3rem;
+
+  border-top:
+    1px solid
+    rgba(255,255,255,0.09);
+
+  overflow: hidden;
+
+  transition:
+    min-height 0.7s
+    cubic-bezier(.65,0,.35,1),
+    padding 0.7s
+    cubic-bezier(.65,0,.35,1);
+}
+
+.service-offer-row:last-child {
+  border-bottom:
+    1px solid
+    rgba(255,255,255,0.09);
+}
+
+
+/* =========================================
+   HOVER ATMOSPHERE
+========================================= */
+
+.service-offer-row::before {
+  content: "";
+
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  right: 10%;
+
+  top: 50%;
+
+  transform:
+    translateY(-50%)
+    scale(0.6);
+
+  border-radius: 50%;
+
+  opacity: 0;
+
+  filter: blur(100px);
+
+  transition:
+    opacity 0.8s ease,
+    transform 1s
+    cubic-bezier(.65,0,.35,1);
+
+  pointer-events: none;
+}
+
+.service-offer-burgundy::before {
+  background:
+    rgba(126,42,68,0.12);
+}
+
+.service-offer-blue::before {
+  background:
+    rgba(48,79,103,0.13);
+}
+
+.service-offer-row:hover::before {
+  opacity: 1;
+
+  transform:
+    translateY(-50%)
+    scale(1);
+}
+
+
+/* =========================================
+   NUMBER
+========================================= */
+
+.service-offer-number {
+  align-self: start;
+
+  color: #55575c;
+
+  font-size: 0.65rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.1em;
+
+  transition:
+    color 0.4s ease;
+}
+
+.service-offer-burgundy:hover
+.service-offer-number {
+  color: #a45e79;
+}
+
+.service-offer-blue:hover
+.service-offer-number {
+  color: #5b7d95;
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.service-offer-content {
+  position: relative;
+
+  z-index: 2;
+}
+
+.service-offer-title-wrap {
+  display: flex;
+
+  align-items: center;
+
+  gap: 1.5rem;
+}
+
+.service-offer-title-wrap h3 {
+  margin: 0;
+
+  color: #ddd9dc;
+
+  font-size: clamp(
+    2.3rem,
+    4.2vw,
+    5rem
+  );
+
+  font-weight: 500;
+
+  line-height: 0.9;
+
+  letter-spacing: -0.065em;
+
+  transition:
+    transform 0.7s
+    cubic-bezier(.65,0,.35,1),
+    color 0.5s ease;
+}
+
+.service-offer-row:hover
+.service-offer-title-wrap h3 {
+  transform:
+    translateX(12px);
+}
+
+.service-offer-burgundy:hover
+.service-offer-title-wrap h3 {
+  color: #eee9ec;
+}
+
+.service-offer-blue:hover
+.service-offer-title-wrap h3 {
+  color: #eee9ec;
+}
+
+
+/* =========================================
+   ARROW
+========================================= */
+
+.service-offer-arrow {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 38px;
+  height: 38px;
+
+  flex-shrink: 0;
+
+  border:
+    1px solid
+    rgba(255,255,255,0.12);
+
+  border-radius: 50%;
+
+  color: #777980;
+
+  opacity: 0;
+
+  transform:
+    translateX(-15px)
+    rotate(-20deg);
+
+  transition:
+    opacity 0.45s ease,
+    transform 0.6s
+    cubic-bezier(.65,0,.35,1);
+}
+
+.service-offer-row:hover
+.service-offer-arrow {
+  opacity: 1;
+
+  transform:
+    translateX(0)
+    rotate(0deg);
+}
+
+.service-offer-burgundy:hover
+.service-offer-arrow {
+  border-color:
+    rgba(164,94,121,0.45);
+
+  color: #a45e79;
+}
+
+.service-offer-blue:hover
+.service-offer-arrow {
+  border-color:
+    rgba(91,125,149,0.45);
+
+  color: #6f93ad;
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.service-offer-content p {
+  max-width: 470px;
+
+  margin:
+    2rem 0 0;
+
+  color: #777980;
+
+  font-size: 0.95rem;
+
+  line-height: 1.65;
+
+  opacity: 0.75;
+
+  transform:
+    translateY(8px);
+
+  transition:
+    opacity 0.5s ease,
+    transform 0.6s
+    cubic-bezier(.65,0,.35,1);
+}
+
+.service-offer-row:hover
+.service-offer-content p {
+  opacity: 1;
+
+  transform:
+    translateY(0);
+}
+
+
+/* =========================================
+   DETAIL
+========================================= */
+
+.service-offer-detail {
+  display: block;
+
+  margin-top: 1.2rem;
+
+  color: #4f5156;
+
+  font-size: 0.52rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.13em;
+
+  text-transform: uppercase;
+
+  transition:
+    color 0.4s ease;
+}
+
+.service-offer-burgundy:hover
+.service-offer-detail {
+  color: #8f566c;
+}
+
+.service-offer-blue:hover
+.service-offer-detail {
+  color: #5b7d95;
+}
+
+
+/* =========================================
+   SVG VISUAL
+========================================= */
+
+.service-offer-visual {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+
+  height: 240px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0.58;
+
+  transform:
+    translateX(25px)
+    scale(0.94);
+
+  transition:
+    opacity 0.7s ease,
+    transform 0.8s
+    cubic-bezier(.65,0,.35,1);
+}
+
+.service-offer-row:hover
+.service-offer-visual {
+  opacity: 1;
+
+  transform:
+    translateX(0)
+    scale(1);
+}
+
+.offer-svg {
+  width: 100%;
+  max-width: 360px;
+
+  height: auto;
+
+  overflow: visible;
+}
+
+
+/* =========================================
+   SVG LANGUAGE
+========================================= */
+
+.svg-outline {
+  stroke:
+    rgba(238,233,236,0.24);
+
+  stroke-width: 1;
+}
+
+.svg-line {
+  stroke:
+    rgba(238,233,236,0.16);
+
+  stroke-width: 1;
+}
+
+.svg-grid {
+  stroke:
+    rgba(91,125,149,0.25);
+
+  stroke-width: 1;
+}
+
+.svg-grid-box {
+  stroke:
+    rgba(164,94,121,0.28);
+
+  stroke-width: 1;
+}
+
+.svg-muted {
+  fill:
+    rgba(255,255,255,0.11);
+}
+
+.svg-dot {
+  fill:
+    rgba(238,233,236,0.25);
+}
+
+.svg-muted-dot {
+  fill:
+    rgba(255,255,255,0.16);
+}
+
+.svg-fill-burgundy {
+  fill:
+    #9d4c6a;
+}
+
+.svg-fill-blue {
+  fill:
+    #5b7d95;
+}
+
+.svg-blue-box {
+  stroke:
+    rgba(91,125,149,0.45);
+
+  stroke-width: 1;
+}
+
+.svg-blue-line {
+  stroke:
+    #5b7d95;
+
+  stroke-width: 2;
+
+  stroke-linecap: round;
+
+  stroke-linejoin: round;
+}
+
+.svg-burgundy-line {
+  stroke:
+    #9d4c6a;
+
+  stroke-width: 2;
+
+  stroke-linecap: round;
+
+  stroke-linejoin: round;
+}
+
+.svg-play {
+  stroke:
+    #9d4c6a;
+
+  stroke-width: 2;
+
+  stroke-linejoin: round;
+}
+
+.svg-position-circle {
+  stroke:
+    rgba(91,125,149,0.65);
+
+  stroke-width: 1.5;
+}
+
+
+/* =========================================
+   SVG HOVER MOVEMENT
+========================================= */
+
+.service-offer-row:hover
+.svg-outline {
+  stroke:
+    rgba(238,233,236,0.4);
+}
+
+.service-offer-row:hover
+.svg-grid {
+  stroke:
+    rgba(91,125,149,0.42);
+}
+
+.service-offer-row:hover
+.svg-grid-box {
+  stroke:
+    rgba(164,94,121,0.48);
+}
+
+
+/* =========================================
+   FOOTER STATEMENT
+========================================= */
+
+.services-offerings-footer {
+  width: min(
+    1180px,
+    calc(100% - 3rem)
+  );
+
+  margin:
+    8rem auto 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 2rem;
+
+  color: #55575c;
+
+  font-size: 0.55rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.16em;
+
+  text-transform: uppercase;
+}
+
+.services-offerings-footer strong {
+  color: #a45e79;
+
+  font-weight: 600;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 950px) {
+
+  .services-offerings {
+    padding:
+      9rem 0
+      7rem;
+  }
+
+  .services-offerings-heading {
+    grid-template-columns:
+      1fr 0.55fr;
+  }
+
+  .service-offer-row {
+    grid-template-columns:
+      50px
+      1fr
+      0.7fr;
+
+    gap: 2rem;
+
+    min-height: 320px;
+  }
+
+  .service-offer-title-wrap h3 {
+    font-size:
+      clamp(
+        2.1rem,
+        4.5vw,
+        4rem
+      );
+  }
+
+  .service-offer-visual {
+    height: 200px;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+  .services-offerings {
+    padding:
+      7rem 0
+      5rem;
+  }
+
+  .services-offerings-header {
+    width:
+      calc(100% - 2rem);
+
+    margin-bottom: 5rem;
+  }
+
+  .services-offerings-eyebrow
+  span:last-child {
+    display: none;
+  }
+
+  .services-offerings-heading {
+    display: block;
+  }
+
+  .services-offerings-heading h2 {
+    font-size:
+      clamp(
+        3.2rem,
+        14vw,
+        5rem
+      );
+  }
+
+  .services-offerings-heading p {
+    max-width: 330px;
+
+    margin-top: 2rem;
+
+    font-size: 0.9rem;
+  }
+
+
+  /* ROW */
+
+  .service-offer-row {
+    width:
+      calc(100% - 2rem);
+
+    min-height: 0;
+
+    padding:
+      3.2rem 0;
+
+    display: grid;
+
+    grid-template-columns:
+      42px
+      1fr;
+
+    gap: 1rem;
+  }
+
+  .service-offer-number {
+    padding-top: 0.3rem;
+  }
+
+  .service-offer-content {
+    min-width: 0;
+  }
+
+  .service-offer-title-wrap {
+    align-items: flex-start;
+
+    gap: 0.8rem;
+  }
+
+  .service-offer-title-wrap h3 {
+    font-size:
+      clamp(
+        2rem,
+        9vw,
+        3.3rem
+      );
+
+    line-height: 0.92;
+  }
+
+  .service-offer-arrow {
+    width: 31px;
+    height: 31px;
+
+    font-size: 0.75rem;
+
+    opacity: 1;
+
+    transform: none;
+  }
+
+  .service-offer-content p {
+    max-width: 320px;
+
+    margin-top: 1.4rem;
+
+    font-size: 0.85rem;
+
+    opacity: 1;
+
+    transform: none;
+  }
+
+  .service-offer-detail {
+    margin-top: 1rem;
+
+    line-height: 1.6;
+  }
+
+
+  /* SVG */
+
+  .service-offer-visual {
+    grid-column: 2;
+
+    width: 100%;
+
+    height: 180px;
+
+    margin-top: 1rem;
+
+    opacity: 0.78;
+
+    transform: none;
+  }
+
+  .offer-svg {
+    max-width: 310px;
+  }
+
+
+  /* FOOTER */
+
+  .services-offerings-footer {
+    width:
+      calc(100% - 2rem);
+
+    margin-top: 5rem;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 0.7rem;
+
+    line-height: 1.6;
+  }
+}
+
+
+/* =========================================
+   SMALL PHONES
+========================================= */
+
+@media (max-width: 380px) {
+
+  .service-offer-row {
+    padding:
+      2.8rem 0;
+  }
+
+  .service-offer-title-wrap h3 {
+    font-size: 1.9rem;
+  }
+
+  .service-offer-visual {
+    height: 155px;
+  }
+
+  .service-offer-content p {
+    font-size: 0.8rem;
+  }
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .service-offer-row,
+  .service-offer-row::before,
+  .service-offer-title-wrap h3,
+  .service-offer-arrow,
+  .service-offer-content p,
+  .service-offer-visual {
+    transition: none;
+  }
+}

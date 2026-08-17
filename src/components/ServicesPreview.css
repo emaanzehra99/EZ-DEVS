@@ -1,0 +1,478 @@
+.services-preview {
+  position: relative;
+
+  width: 100%;
+
+  padding: 12rem 0 10rem;
+
+  background:
+    radial-gradient(
+      circle at 78% 35%,
+      rgba(120, 43, 68, 0.09),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 15% 75%,
+      rgba(50, 80, 103, 0.055),
+      transparent 28%
+    ),
+    #080809;
+
+  overflow: hidden;
+}
+
+.services-preview-container {
+  width: min(1180px, calc(100% - 3rem));
+
+  margin: 0 auto;
+}
+
+
+/* =========================================
+   TOP
+========================================= */
+
+.services-top {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 5rem;
+}
+
+.services-eyebrow,
+.services-index {
+  color: #95566f;
+
+  font-size: 0.62rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.19em;
+
+  text-transform: uppercase;
+}
+
+.services-index {
+  color: #55575c;
+}
+
+
+/* =========================================
+   MAIN
+========================================= */
+
+.services-main {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.35fr)
+    minmax(280px, 0.65fr);
+
+  gap: 6rem;
+
+  align-items: end;
+}
+
+
+/* =========================================
+   STATEMENT
+========================================= */
+
+.services-statement {
+  min-width: 0;
+}
+
+.services-statement-line-wrap {
+  display: block;
+
+  overflow: hidden;
+}
+
+.services-statement-line {
+  display: block;
+
+  color: #efebee;
+
+  font-size: clamp(
+    3.8rem,
+    7vw,
+    7.8rem
+  );
+
+  font-weight: 500;
+
+  line-height: 0.88;
+
+  letter-spacing: -0.07em;
+
+  will-change: transform;
+}
+
+.services-statement-line em {
+  color: #7f8187;
+
+  font-style: normal;
+}
+
+.services-accent {
+  color: #a45e79;
+}
+
+
+/* =========================================
+   SIDE
+========================================= */
+
+.services-side {
+  padding-bottom: 0.5rem;
+}
+
+.services-description {
+  max-width: 390px;
+
+  margin: 0 0 3rem;
+
+  color: #85878d;
+
+  font-size: 0.86rem;
+
+  line-height: 1.85;
+}
+
+
+/* =========================================
+   CAPABILITIES
+========================================= */
+
+.services-capabilities {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.services-capability {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns: 35px 1fr auto;
+
+  align-items: center;
+
+  gap: 0.7rem;
+
+  padding: 1.15rem 0;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+  cursor: default;
+
+  transition:
+    padding-left 0.4s ease,
+    border-color 0.4s ease;
+}
+
+.services-capability::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -1px;
+
+  width: 0;
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #9c5a73,
+      transparent
+    );
+
+  transition: width 0.5s ease;
+}
+
+.services-capability:hover {
+  padding-left: 0.55rem;
+
+  border-color: rgba(164, 94, 121, 0.2);
+}
+
+.services-capability:hover::before {
+  width: 100%;
+}
+
+.services-capability-number {
+  color: #9c5a73;
+
+  font-size: 0.56rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.08em;
+}
+
+.services-capability-name {
+  color: #d5d1d4;
+
+  font-size: 0.64rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.13em;
+}
+
+.services-capability-arrow {
+  color: #55575c;
+
+  font-size: 0.9rem;
+
+  transition:
+    color 0.35s ease,
+    transform 0.4s ease;
+}
+
+.services-capability:hover
+.services-capability-arrow {
+  color: #a45e79;
+
+  transform:
+    translate(3px, -3px);
+}
+
+
+/* =========================================
+   CTA
+========================================= */
+
+.services-cta {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 1rem;
+
+  margin-top: 2.7rem;
+
+  color: #ddd9dc;
+
+  font-size: 0.58rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.15em;
+
+  text-decoration: none;
+
+  transition:
+    color 0.3s ease,
+    gap 0.4s ease;
+}
+
+.services-cta-arrow {
+  color: #a45e79;
+
+  font-size: 1rem;
+
+  transition:
+    transform 0.4s ease;
+}
+
+.services-cta:hover {
+  color: #ffffff;
+
+  gap: 1.25rem;
+}
+
+.services-cta:hover
+.services-cta-arrow {
+  transform:
+    translate(4px, -4px);
+}
+
+
+/* =========================================
+   BOTTOM
+========================================= */
+
+.services-bottom {
+  display: flex;
+
+  align-items: center;
+
+  gap: 1.2rem;
+
+  margin-top: 8rem;
+
+  color: #4e5055;
+
+  font-size: 0.5rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.16em;
+}
+
+.services-bottom-line {
+  display: block;
+
+  flex: 1;
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.08),
+      transparent
+    );
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 950px) {
+
+  .services-preview {
+    padding: 9rem 0;
+  }
+
+  .services-main {
+    grid-template-columns: 1fr;
+
+    gap: 4rem;
+  }
+
+  .services-side {
+    max-width: 560px;
+
+    margin-left: auto;
+  }
+
+  .services-statement-line {
+    font-size: clamp(
+      3.5rem,
+      9vw,
+      6rem
+    );
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+
+  .services-preview {
+    padding: 7rem 0 6rem;
+  }
+
+  .services-preview-container {
+    width: min(
+      calc(100% - 2rem),
+      500px
+    );
+  }
+
+  .services-top {
+    margin-bottom: 3.5rem;
+  }
+
+  .services-eyebrow,
+  .services-index {
+    font-size: 0.5rem;
+
+    letter-spacing: 0.13em;
+  }
+
+  .services-main {
+    gap: 3.5rem;
+  }
+
+  .services-statement-line {
+    font-size: clamp(
+      2.65rem,
+      12.8vw,
+      4.4rem
+    );
+
+    line-height: 0.91;
+
+    letter-spacing: -0.065em;
+  }
+
+  .services-description {
+    margin-bottom: 2rem;
+
+    font-size: 0.78rem;
+
+    line-height: 1.8;
+  }
+
+  .services-capability {
+    grid-template-columns:
+      30px 1fr auto;
+
+    padding: 1rem 0;
+  }
+
+  .services-capability-name {
+    font-size: 0.55rem;
+
+    letter-spacing: 0.1em;
+  }
+
+  .services-cta {
+    margin-top: 2.2rem;
+  }
+
+  .services-bottom {
+    gap: 0.7rem;
+
+    margin-top: 5rem;
+
+    font-size: 0.42rem;
+  }
+}
+
+
+/* =========================================
+   SMALL PHONES
+========================================= */
+
+@media (max-width: 380px) {
+
+  .services-statement-line {
+    font-size: 2.45rem;
+  }
+
+  .services-description {
+    font-size: 0.74rem;
+  }
+
+  .services-capability-name {
+    font-size: 0.5rem;
+  }
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .services-statement-line {
+    transform: none !important;
+  }
+
+  .services-capability,
+  .services-cta {
+    transition: none;
+  }
+}
