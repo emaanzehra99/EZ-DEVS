@@ -5,7 +5,7 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import DigitalGap from "./components/DigitalGap";
 import Solution from "./components/Solution";
-import WorkPreview from "./components/WorkPreview";
+// import WorkPreview from "./components/WorkPreview";
 import ServicesPreview from "./components/ServicesPreview";
 import WhyEZ from "./components/WhyEZ";
 import FinalCTA from "./components/FinalCTA";
@@ -35,7 +35,7 @@ function App() {
               <Hero />
               <DigitalGap />
               <Solution />
-              <WorkPreview />
+              {/* <WorkPreview /> */}
               <ServicesPreview />
               <WhyEZ />
               <FinalCTA />
